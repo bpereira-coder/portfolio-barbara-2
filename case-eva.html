@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case — Eva Benefícios · Bárbara Pereira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0D0D0D;
+  --surface: #141414;
+  --surface-2: #1C1C1C;
+  --border: rgba(255,255,255,0.08);
+  --border-mid: rgba(255,255,255,0.13);
+  --text-primary: #F0EDE8;
+  --text-secondary: #7A7875;
+  --text-tertiary: #3E3C3A;
+  --accent: #C9A96E;
+  --accent-dim: rgba(201,169,110,0.09);
+  --radius: 10px;
+  --font: 'Inter', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2.5rem;
+  background: rgba(13,13,13,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo img, footer img { border: none !important; border-radius: 0 !important; background: transparent !important; }
+.nav-logo { text-decoration: none; }
+.nav-back { font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  width: 100%; min-height: 92vh; padding-top: 4rem;
+  position: relative; overflow: hidden; display: flex; align-items: flex-end;
+  background: #0a0a0a;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center center;
+  background-image: url('imagens/eva_capa.jpg');
+  opacity: 1;
+}
+.hero-fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.1) 0%, rgba(13,13,13,0.3) 40%, rgba(13,13,13,0.85) 75%, rgba(13,13,13,1) 100%);
+}
+.hero-text {
+  position: relative; z-index: 2;
+  padding: 0 2.5rem 4rem; max-width: 760px;
+}
+.hero-eyebrow {
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+.hero-title {
+  font-size: clamp(1.7rem, 3.8vw, 3rem); font-weight: 400;
+  letter-spacing: -0.025em; line-height: 1.15;
+  color: var(--text-primary); margin-bottom: 1.25rem;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.htag {
+  font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 4px 10px; border: 1px solid var(--border-mid); border-radius: 2px; color: var(--text-secondary);
+}
+.htag.a { border-color: var(--accent); color: var(--accent); }
+
+/* META */
+.meta { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
+.meta-col { padding: 1.1rem 2rem; border-right: 1px solid var(--border); }
+.meta-col:last-child { border-right: none; }
+.ml { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 3px; }
+.mv { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* SECTIONS */
+.section { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 3rem 2.5rem; border-bottom: 1px solid var(--border); align-items: start; }
+.section.full { display: block; padding: 3rem 2.5rem; }
+.section:last-child { border-bottom: none; }
+.slabel { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); position: sticky; top: 4.5rem; padding-top: 2px; }
+.stitle { font-size: 1.05rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.3; }
+.stext { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.75rem; }
+.stext:last-child { margin-bottom: 0; }
+.stext strong { color: var(--text-primary); font-weight: 500; }
+
+/* POA */
+.poa { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.poa-col { background: var(--surface); padding: 1.4rem 1.5rem; }
+.poa-l { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+.poa-t { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.7; }
+.poa-t strong { color: var(--text-primary); font-weight: 500; }
+
+/* PROCESSO */
+.steps { display: flex; flex-direction: column; gap: 0; margin-top: 1.25rem; }
+.step { display: grid; grid-template-columns: 90px 1fr; border: 1px solid var(--border); border-bottom: none; background: var(--surface); }
+.step:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.step:last-child { border-bottom: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); }
+.step-l { padding: 1rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 2px; }
+.step-n { font-size: 1.1rem; font-weight: 500; color: var(--text-primary); line-height: 1; }
+.step-ph { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.step-r { padding: 1rem 1.25rem; }
+.step-title { font-size: 0.82rem; font-weight: 500; color: var(--text-primary); margin-bottom: 3px; }
+.step-desc { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* IMAGES */
+img { width: 100%; display: block; border-radius: var(--radius); border: 1px solid var(--border); }
+.img-w { margin: 2rem -2.5rem; }
+.img-w img { border-radius: 0; border-left: none; border-right: none; border: none; }
+.img-w .img-cap { padding: 0.6rem 2.5rem; font-size: 0.68rem; color: var(--text-tertiary); letter-spacing: 0.03em; }
+.img-contained { margin: 1.5rem 0; }
+.img-contained img { border-radius: var(--radius); }
+.img-contained .img-cap { margin-top: 7px; font-size: 0.68rem; color: var(--text-tertiary); letter-spacing: 0.03em; }
+.img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.5rem 0; }
+.img-grid-2 img { border-radius: var(--radius); border: 1px solid var(--border); }
+.img-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 1.5rem 0; }
+.img-grid-3 img { border-radius: var(--radius); border: 1px solid var(--border); }
+
+/* IVO GRID */
+.ivo-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; margin: 1.5rem 0; }
+.ivo-hero-img { background: #f9f5f0; border-radius: var(--radius); padding: 2rem; border: 1px solid var(--border); }
+.ivo-hero-img img { border: none; border-radius: 0; }
+.ivo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 1.5rem 0; }
+.ivo-grid img { border: none; background: #f9f5f0; border-radius: var(--radius); padding: 0.5rem; }
+.ivo-emoji-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 1.5rem 0; }
+.ivo-emoji-grid img { border: none; background: #f9f5f0; border-radius: var(--radius); padding: 0.5rem; }
+
+/* IMPACTOS */
+.impacts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 1.25rem; }
+.impact { background: var(--surface); padding: 1.4rem 1.5rem; }
+.impact-n { font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+.impact-t { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.35rem; }
+.impact-d { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* CAROUSEL */
+.carousel-wrap { max-width: 100%; overflow: hidden; }
+.carousel { display: flex; transition: transform 0.4s ease; }
+.carousel-item { min-width: 100%; position: relative; }
+.carousel-item img { width: 100%; display: block; max-height: 70vh; object-fit: contain; background: #111; border-radius: 0; border: none; }
+.carousel-cap { font-size: 0.68rem; color: var(--text-tertiary); padding: 0.6rem 2.5rem; letter-spacing: 0.03em; }
+.carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 1.25rem 0 0.5rem; }
+.carousel-btn { background: none; border: 1px solid var(--border-mid); color: var(--text-secondary); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 0.9rem; transition: border-color 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; }
+.carousel-btn:hover { border-color: var(--accent); color: var(--accent); }
+.carousel-dots { display: flex; gap: 6px; }
+.cdot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-tertiary); transition: background 0.2s; cursor: pointer; }
+.cdot.active { background: var(--accent); }
+
+/* FOOTER */
+footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.fn { font-size: 0.78rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 8px; }
+.fl { font-size: 0.72rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+.fl:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-logo" href="#"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:44px; width:auto; display:block;"></a>
+  <a class="nav-back" href="index.html">← Projetos</a>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">Eva Benefícios · 2022–2024</p>
+    <h1 class="hero-title">Construindo um sistema visual<br>escalável para uma startup<br>de benefícios flexíveis</h1>
+    <div class="hero-tags">
+      <span class="htag a">Identidade visual</span>
+      <span class="htag">Branding</span>
+      <span class="htag">Mascote</span>
+      <span class="htag">Social media</span>
+      <span class="htag">Materiais físicos</span>
+      <span class="htag">Landing pages</span>
+    </div>
+  </div>
+</div>
+
+<!-- META -->
+<div class="meta">
+  <div class="meta-col"><div class="ml">Empresa</div><div class="mv">Eva Benefícios</div></div>
+  <div class="meta-col"><div class="ml">Período</div><div class="mv">2022–2024</div></div>
+  <div class="meta-col"><div class="ml">Meu papel</div><div class="mv">Design de identidade · Mascote · Social media · Landing pages · Materiais físicos</div></div>
+  <div class="meta-col"><div class="ml">Time</div><div class="mv">Gerência de marketing · Social media · SEO · 2 designers</div></div>
+</div>
+
+<!-- POA -->
+<div class="section full" style="padding-bottom:0; border-bottom:none;">
+  <div class="poa">
+    <div class="poa-col">
+      <div class="poa-l">Problema</div>
+      <div class="poa-t">A Eva tinha uma identidade visual bonita, mas com <strong>baixa flexibilidade de aplicação</strong>. O sistema visual não se adaptava bem a diferentes canais, formatos e contextos — um gargalo crítico para uma startup acelerando sua presença digital.</div>
+    </div>
+    <div class="poa-col">
+      <div class="poa-l">Objetivo</div>
+      <div class="poa-t">Reestruturar a identidade para criar um <strong>sistema visual vivo e escalável</strong> — capaz de funcionar no Instagram, em uma landing page, em materiais internos e em um evento, com a mesma coerência visual.</div>
+    </div>
+    <div class="poa-col">
+      <div class="poa-l">Minha atuação</div>
+      <div class="poa-t">Participei da reestruturação completa da identidade e do manual de marca, em colaboração com outra designer. Tive <strong>autoria direta no mascote Ivo</strong> — desenvolvido integralmente por mim — e assumi escopo amplo típico de startup: redes sociais, landing pages, endomarketing, materiais físicos e apresentações.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTEXTO -->
+<div class="section">
+  <div class="slabel">Contexto</div>
+  <div class="sbody">
+    <h2 class="stitle">Uma startup de benefícios em momento de virada</h2>
+    <p class="stext">A Eva Benefícios era uma startup do setor de benefícios flexíveis fundada em 2021, em Ouro Preto (MG). Em um momento de aceleração digital, a empresa precisava que sua marca acompanhasse o crescimento — mas o sistema visual existente travava a produção e limitava a consistência entre canais.</p>
+    <p class="stext">O time de marketing era enxuto: uma gerente, uma social media, um profissional de SEO e duas designers. Esse contexto exigiu <strong>multidisciplinaridade real</strong> — não só design, mas entendimento de negócio, comunicação e estratégia de marca.</p>
+    <div class="img-contained">
+      <img src="imagens/apresentacao_comercial.png" alt="Apresentação comercial Eva Benefícios" style="object-fit:contain; background:#0a0a0a;">
+      <p class="img-cap">Apresentação comercial — sistema visual aplicado em material de vendas</p>
+    </div>
+  </div>
+</div>
+
+<!-- PROCESSO -->
+<div class="section">
+  <div class="slabel">Processo</div>
+  <div class="sbody">
+    <h2 class="stitle">De um sistema rígido a uma identidade que respira</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="step-l"><span class="step-n">01</span><span class="step-ph">Diagnóstico</span></div>
+        <div class="step-r">
+          <div class="step-title">Mapeamento das limitações do sistema visual existente</div>
+          <div class="step-desc">Identificamos onde o sistema travava: paleta sem variações funcionais, elementos gráficos pouco adaptáveis e ausência de um personagem que humanizasse a marca. O diagnóstico foi o que orientou toda a reestruturação.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-l"><span class="step-n">02</span><span class="step-ph">Identidade</span></div>
+        <div class="step-r">
+          <div class="step-title">Reestruturação do sistema visual e manual de marca</div>
+          <div class="step-desc">Em colaboração com outra designer, construímos um sistema mais versátil: paleta expandida, tipografia funcional para digital, padrão gráfico de folhas como elemento de marca e diretrizes claras de aplicação por canal.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-l"><span class="step-n">03</span><span class="step-ph">Mascote</span></div>
+        <div class="step-r">
+          <div class="step-title">Criação do Ivo — de conceito a sistema de personagens</div>
+          <div class="step-desc">O desafio era criar um personagem que traduzisse os valores da marca — alegria, energia, acessibilidade e confiança — e que tivesse flexibilidade suficiente para aparecer em posts, embalagens, cartões e animações. O Ivo foi desenvolvido integralmente por mim, incluindo sua família de expressões e variações temáticas.</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-l"><span class="step-n">04</span><span class="step-ph">Aplicação</span></div>
+        <div class="step-r">
+          <div class="step-title">Desdobramento em todos os pontos de contato da marca</div>
+          <div class="step-desc">O sistema passou a funcionar de forma consistente em redes sociais, landing pages, materiais físicos, endomarketing, apresentações comerciais e ensaio fotográfico — provando que uma identidade bem construída escala sem perder coerência.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- IVO -->
+<div class="section">
+  <div class="slabel">O mascote</div>
+  <div class="sbody">
+    <h2 class="stitle">Ivo — personagem, sistema e linguagem</h2>
+    <p class="stext">O Ivo nasceu da necessidade de humanizar uma marca de benefícios financeiros — um segmento que costuma ser frio e distante. A proposta era criar um personagem <strong>carismático, adaptável e com personalidade própria</strong>, que pudesse aparecer em qualquer contexto da marca sem perder reconhecimento.</p>
+
+    <p class="stext">O design circular simples confere aparência amigável e memorável. As cores da identidade visual da Eva foram incorporadas ao personagem, garantindo coerência. A flexibilidade de expressões e acessórios permite que o Ivo se adapte a diferentes contextos sem perder sua identidade.</p>
+    <div class="img-contained" style="margin-top:1rem;">
+      <img src="imagens/ivo_valores.png" alt="Valores da marca — alegria, energia, acessibilidade, confiança" style="object-fit:contain; background:transparent; border:none;">
+    </div>
+
+    <p class="stext" style="margin-top:1rem;">A família de expressões e variações temáticas transforma o Ivo em uma linguagem — cada contexto tem sua versão, mantendo a mesma essência.</p>
+
+    <div class="ivo-grid">
+      <img src="imagens/ivo_ola.png" alt="Ivo olá">
+      <img src="imagens/ivo_festa.png" alt="Ivo festa">
+      <img src="imagens/ivo_deitado.png" alt="Ivo deitado">
+      <img src="imagens/ivo_choro.png" alt="Ivo choro">
+    </div>
+    <div class="ivo-emoji-grid">
+      <img src="imagens/ivo_oculos.png" alt="Ivo óculos">
+      <img src="imagens/ivo_anjo.png" alt="Ivo anjo">
+      <img src="imagens/ivo_emoji1.png" alt="Ivo emoji">
+      <img src="imagens/ivo_emoji2.png" alt="Ivo emoji">
+      <img src="imagens/ivo_emoji3.png" alt="Ivo emoji">
+      <img src="imagens/ivo_amor.png" alt="Ivo amor">
+    </div>
+
+    <div class="img-contained">
+      <img src="imagens/mockup_cartela.jpg" alt="Cartela de adesivos com o Ivo">
+      <p class="img-cap">Cartela de adesivos — o mascote desdobrado em linguagem de stickers</p>
+    </div>
+  </div>
+</div>
+
+<!-- DESDOBRAMENTOS -->
+<div class="section">
+  <div class="slabel">Desdobramentos</div>
+  <div class="sbody">
+    <h2 class="stitle">O sistema funcionando em todos os canais</h2>
+    <p class="stext">Uma identidade bem construída prova seu valor quando escala. Do Instagram ao press kit físico, a marca Eva passou a se comunicar com consistência em todos os pontos de contato.</p>
+
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">Redes sociais</h3>
+    <p class="stext">Responsável pelo design do Instagram, Facebook e LinkedIn — mantendo consistência visual e aplicando o sistema em diferentes formatos de conteúdo.</p>
+  </div>
+</div>
+
+<div class="section full" style="padding-top:0; border-top:none; padding-bottom:0; border-bottom:none;">
+  <div class="img-w">
+    <img src="imagens/social_media.jpg" alt="Social media Eva Benefícios">
+    <p class="img-cap">Feed Instagram — sistema visual aplicado em múltiplos formatos e temas de conteúdo</p>
+  </div>
+</div>
+
+<div class="section" style="border-top: 1px solid var(--border);">
+  <div class="slabel"></div>
+  <div class="sbody">
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin-bottom:0.5rem; letter-spacing:0.03em;">Stories e conteúdo em movimento</h3>
+    <p class="stext">Os stories e carrosséis seguiam uma linguagem própria — mais dinâmica, com o Ivo como guia emocional da narrativa.</p>
+    <div class="img-contained">
+      <img src="imagens/eva_stories.png" alt="Stories Eva Benefícios">
+      <p class="img-cap">Stories — narrativas sequenciais com o mascote como elemento condutor</p>
+    </div>
+
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">Materiais físicos e endomarketing</h3>
+    <p class="stext">A identidade visual precisava funcionar também no mundo físico — de press kits e embalagens a ações de endomarketing. O padrão gráfico de folhas e o Ivo garantiram coerência do digital ao impresso.</p>
+
+    <div class="img-grid-2">
+      <div>
+        <img src="imagens/mockup_box_eva.jpg" alt="Caixa de envio Eva">
+        <p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Caixa de envio — identidade visual aplicada em embalagem</p>
+      </div>
+      <div>
+        <img src="imagens/eva_ensaio2.jpg" alt="Ensaio fotográfico — cartão e card holder">
+        <p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Card holder e cartão Eva — ensaio fotográfico da marca</p>
+      </div>
+    </div>
+
+    <div class="img-grid-2" style="margin-top:0;">
+      <div>
+        <img src="imagens/eva_pascoa1.jpg" alt="Ação de Páscoa Eva">
+        <p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Ação de Páscoa — endomarketing com embalagem personalizada e card do Ivo</p>
+      </div>
+      <div>
+        <img src="imagens/eva_pascoa2.jpg" alt="Caixa de chocolates Páscoa">
+        <p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Kit Páscoa — caixa de chocolates com identidade da Eva</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">Ensaio fotográfico</h3>
+    <p class="stext">Participei da direção criativa do ensaio fotográfico da marca — garantindo que os materiais físicos e a identidade visual tivessem presença real nas fotos.</p>
+
+    <div class="img-grid-2">
+      <img src="imagens/eva_ensaio1.jpg" alt="Ensaio fotográfico Eva — ecobag">
+      <img src="imagens/eva_ensaio3.jpg" alt="Ensaio fotográfico Eva — modelo com cartão">
+    </div>
+
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">Landing page</h3>
+    <p class="stext">Desenvolvimento de landing pages com foco em aquisição de leads e conversão — estrutura de informação clara, hierarquia visual definida e o sistema de marca como base.</p>
+    <div class="img-contained">
+      <img src="imagens/landing_page.png" alt="Landing page Eva Benefícios" style="object-fit:contain; background:#f0f0f0;">
+      <p class="img-cap">Landing page de materiais gratuitos — estrutura orientada à conversão</p>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTADOS -->
+<div class="section">
+  <div class="slabel">Resultados</div>
+  <div class="sbody">
+    <h2 class="stitle">Uma marca que passou a escalar com consistência</h2>
+    <div class="impacts">
+      <div class="impact">
+        <div class="impact-n">01</div>
+        <div class="impact-t">Sistema visual versátil e documentado</div>
+        <div class="impact-d">A reestruturação do manual de marca permitiu que o time produzisse materiais com mais agilidade e menos retrabalho, mantendo consistência em todos os canais.</div>
+      </div>
+      <div class="impact">
+        <div class="impact-n">02</div>
+        <div class="impact-t">Mascote como linguagem de marca</div>
+        <div class="impact-d">O Ivo se tornou peça central da comunicação — presente no cartão, nos posts, nas embalagens, nas animações e nas ações de endomarketing, criando conexão emocional com o público.</div>
+      </div>
+      <div class="impact">
+        <div class="impact-n">03</div>
+        <div class="impact-t">Identidade funcional do digital ao físico</div>
+        <div class="impact-d">O sistema passou a funcionar com coerência em Instagram, landing pages, apresentações comerciais, press kits e eventos — sem perder reconhecimento de marca em nenhum ponto de contato.</div>
+      </div>
+      <div class="impact">
+        <div class="impact-n">04</div>
+        <div class="impact-t">Multidisciplinaridade em contexto de startup</div>
+        <div class="impact-d">Em um time enxuto, assumi responsabilidades que iam além do design tradicional — da estratégia visual à direção criativa de ensaio fotográfico, passando por edição de vídeo e produção de apresentações comerciais.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fn">
+    <img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.5; vertical-align:middle;">
+    <span style="color:var(--text-tertiary); font-size:0.75rem;">· 2026</span>
+  </span>
+  <a class="fl" href="index.html">← Voltar para projetos</a>
+</footer>
+
+<script>
+var cIdx = 0;
+var cItems = document.querySelectorAll('.carousel-item');
+var dotsWrap = document.getElementById('carousel-dots');
+if (dotsWrap && cItems.length) {
+  cItems.forEach(function(_, i) {
+    var d = document.createElement('div');
+    d.className = 'cdot' + (i === 0 ? ' active' : '');
+    d.onclick = function() { goTo(i); };
+    dotsWrap.appendChild(d);
+  });
+}
+function goTo(n) {
+  cIdx = (n + cItems.length) % cItems.length;
+  var c = document.getElementById('carousel');
+  if (c) c.style.transform = 'translateX(-' + (cIdx * 100) + '%)';
+  document.querySelectorAll('.cdot').forEach(function(d, i) { d.classList.toggle('active', i === cIdx); });
+}
+function moveCarousel(dir) { goTo(cIdx + dir); }
+</script>
+</body>
+</html>
