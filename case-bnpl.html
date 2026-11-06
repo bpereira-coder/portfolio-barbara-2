@@ -297,13 +297,22 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
   .hero-disciplines { font-size: 0.72rem; gap: 0.4rem; }
 }
 
+
+.img-grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:1.5rem 0; align-items:start; }
+.img-grid-2 img, .img-contained img { width:100%; display:block; border-radius:10px; border:1px solid rgba(255,255,255,0.08); }
+.img-grid-2 img { aspect-ratio:1/1; object-fit:cover; }
+.img-contained { margin:1.5rem 0; }
+.img-contained .img-cap { margin-top:7px; font-size:0.68rem; color:var(--text-tertiary); padding:0; }
+@media (max-width:768px){ .img-grid-2 { grid-template-columns:1fr; } }
+nav{justify-content:flex-start!important}
+.nav-logo{position:absolute;left:50%;transform:translateX(-50%)}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-logo" href="#"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:48px; width:auto; display:block;"></a>
   <a class="nav-back" href="index.html">← Projetos</a>
+  <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:48px; width:auto; display:block;"></a>
 </nav>
 
 <!-- HERO -->
@@ -312,7 +321,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
   <div class="hero-fade"></div>
   <div class="hero-text">
     <p class="hero-eyebrow">Dotz · 2026</p>
-    <h1 class="hero-title">Simplificando a comunicação<br>do Crédito Dotz<br>no varejo físico e digital</h1>
+    <h1 class="hero-title">Do corredor do supermercado<br>ao app: o lançamento<br>do Crédito Dotz</h1>
     <div class="hero-tags">
       <span class="htag a">Estratégia omnichannel</span>
       <span class="htag">CRM</span>
@@ -358,7 +367,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
         <div class="step-l"><span class="step-n">01</span><span class="step-ph">Diagnóstico</span></div>
         <div class="step-r">
           <div class="step-title">Mapeamento de perfis e barreiras financeiras</div>
-          <div class="step-desc">Dois perfis com necessidades opostas: o <strong>Transactor</strong> (crédito experiente, quer organização e mais Dotz) e o <strong>Propenso</strong> (26,8% de aprovação de cartão, para quem o produto é inclusão financeira real). Essa diferença moldou toda a estratégia.</div>
+          <div class="step-desc">Dois perfis com necessidades opostas: o <strong>Transactor</strong> (crédito experiente, quer organização e mais Dotz) e o <strong>Propenso</strong> (com acesso restrito a cartão, para quem o produto é inclusão financeira real). Essa diferença moldou toda a estratégia.</div>
         </div>
       </div>
       <div class="step">
@@ -400,7 +409,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
     <div class="seg">
       <div class="seg-col">
         <div class="seg-name"><span class="seg-dot" style="background:#C9A96E;"></span>Transactor</div>
-        <div class="seg-txt">Usuário experiente de crédito, 79% de aprovação, concentra compras no cartão para maximizar benefícios. Para ele, o BNPL libera limite e ainda acumula Dotz.</div>
+        <div class="seg-txt">Usuário experiente de crédito, concentra compras no cartão para maximizar benefícios. Para ele, o BNPL libera limite e ainda acumula Dotz.</div>
         <div class="seg-pills">
           <span class="seg-pill">Ganhe mais Dotz</span>
           <span class="seg-pill">Organize suas finanças</span>
@@ -409,7 +418,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
       </div>
       <div class="seg-col">
         <div class="seg-name"><span class="seg-dot" style="background:#7F77DD;"></span>Propenso</div>
-        <div class="seg-txt">Acesso restrito a cartão (26,8% de aprovação), paga via Pix. Para ele, Crédito Dotz é inclusão financeira — comprar agora, pagar depois, com previsibilidade.</div>
+        <div class="seg-txt">Acesso restrito a cartão, paga via Pix. Para ele, Crédito Dotz é inclusão financeira — comprar agora, pagar depois, com previsibilidade.</div>
         <div class="seg-pills">
           <span class="seg-pill">Sem cartão? Sem problema</span>
           <span class="seg-pill">Parcelas que cabem no bolso</span>
@@ -440,35 +449,25 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
   </div>
 </div>
 
-<!-- CARROSSEL -->
-<div class="section full" style="padding: 0 0 3rem; border-bottom: 1px solid var(--border);">
-  <div class="carousel-wrap">
-    <div class="carousel" id="carousel">
-      <div class="carousel-item">
-        <img src="imagens/frame_wobbler.png" alt="Wobbler PDV">
-        <p class="carousel-cap">Wobbler — material de gôndola para alta visibilidade no corredor</p>
-      </div>
-      <div class="carousel-item">
-        <img src="imagens/frame_takeone.png" alt="Take One PDV">
-        <p class="carousel-cap">Take One — material no ponto de pagamento</p>
-      </div>
-      <div class="carousel-item">
-        <img src="imagens/frame_bolsao.png" alt="Bolsão Acrílico PDV">
-        <p class="carousel-cap">Bolsão acrílico — display de caixa no momento de decisão</p>
-      </div>
-      <div class="carousel-item">
-        <img src="imagens/frame_laptop.png" alt="Banner site Dotz">
-        <p class="carousel-cap">Banner no site dotz.com.br — ponto de entrada digital</p>
-      </div>
-      <div class="carousel-item">
-        <img src="imagens/frame_stories.png" alt="Stories Instagram">
-        <p class="carousel-cap">Stories Instagram — narrativa nas redes sociais</p>
-      </div>
+<!-- PECAS -->
+<div class="section">
+  <div class="slabel">Peças</div>
+  <div class="sbody">
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin-bottom:0.5rem; letter-spacing:0.03em;">PDV: do corredor ao caixa</h3>
+    <p class="stext">No supermercado, o consumidor tem segundos. As peças usam alto contraste, hierarquia rígida e um único CTA: baixar o App Dotz.</p>
+    <div class="img-contained">
+      <img src="imagens/bnpl_wobbler.jpg" alt="Wobbler PDV" loading="lazy">
+      <p class="img-cap">Wobbler: material de gôndola para alta visibilidade no corredor</p>
     </div>
-    <div class="carousel-controls">
-      <button class="carousel-btn" onclick="moveCarousel(-1)">←</button>
-      <div class="carousel-dots" id="carousel-dots"></div>
-      <button class="carousel-btn" onclick="moveCarousel(1)">→</button>
+    <div class="img-grid-2">
+      <div><img src="imagens/bnpl_takeone.jpg" alt="Take One: material no ponto de pagamento" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Take One: material no ponto de pagamento</p></div>
+      <div><img src="imagens/bnpl_bolsao.jpg" alt="Bolsão acrílico: display de caixa no momento de decisão" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Bolsão acrílico: display de caixa no momento de decisão</p></div>
+    </div>
+    <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">Digital</h3>
+    <p class="stext">No digital, a comunicação seguia uma narrativa sequencial, do banner no site aos stories, sempre levando para o App.</p>
+    <div class="img-grid-2">
+      <div><img src="imagens/bnpl_laptop.jpg" alt="Banner no site dotz.com.br: ponto de entrada digital" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Banner no site dotz.com.br: ponto de entrada digital</p></div>
+      <div><img src="imagens/bnpl_stories.jpg" alt="Stories no Instagram" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Stories no Instagram</p></div>
     </div>
   </div>
 </div>

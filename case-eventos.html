@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<script>document.documentElement.classList.add("js");</script>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="imagens/favicon.png">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Case — KVs para eventos · Bárbara Pereira</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Luckiest+Guy&family=Bebas+Neue&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0D0D0D;
+  --surface: #141414;
+  --surface-2: #1C1C1C;
+  --border: rgba(255,255,255,0.08);
+  --border-mid: rgba(255,255,255,0.13);
+  --text-primary: #F0EDE8;
+  --text-secondary: #7A7875;
+  --text-tertiary: #3E3C3A;
+  --accent: #C9A96E;
+  --accent-dim: rgba(201,169,110,0.09);
+  --radius: 10px;
+  --font: 'Inter', system-ui, sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text-primary); font-family: var(--font); font-size: 15px; line-height: 1.6; -webkit-font-smoothing: antialiased; }
+
+/* NAV */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1rem 2.5rem;
+  background: rgba(13,13,13,0.92); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+}
+.nav-logo img, footer img { border: none !important; border-radius: 0 !important; background: transparent !important; }
+.nav-logo { text-decoration: none; }
+.nav-back { font-size: 0.72rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; transition: color 0.2s; }
+.nav-back:hover { color: var(--accent); }
+
+/* HERO */
+.hero {
+  width: 100%; min-height: 92vh; padding-top: 4rem;
+  position: relative; overflow: hidden; display: flex; align-items: flex-end;
+  background: #0a0a0a;
+}
+.hero-img {
+  position: absolute; inset: 0;
+  background-size: cover; background-position: center center;
+  background-image: url('imagens/eventos/chapado_outdoor.jpg');
+  opacity: 1;
+}
+.hero-fade {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(13,13,13,0.1) 0%, rgba(13,13,13,0.3) 40%, rgba(13,13,13,0.85) 75%, rgba(13,13,13,1) 100%);
+}
+.hero-text {
+  position: relative; z-index: 2;
+  padding: 0 2.5rem 4rem; max-width: 760px;
+}
+.hero-eyebrow {
+  font-size: 0.65rem; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.2rem;
+  display: flex; align-items: center; gap: 10px;
+}
+.hero-eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--accent); }
+.hero-title {
+  font-size: clamp(1.7rem, 3.8vw, 3rem); font-weight: 400;
+  letter-spacing: -0.025em; line-height: 1.15;
+  color: var(--text-primary); margin-bottom: 1.25rem;
+}
+.hero-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.htag {
+  font-size: 0.62rem; letter-spacing: 0.07em; text-transform: uppercase;
+  padding: 4px 10px; border: 1px solid var(--border-mid); border-radius: 2px; color: var(--text-secondary);
+}
+.htag.a { border-color: var(--accent); color: var(--accent); }
+
+/* META */
+.meta { display: grid; grid-template-columns: repeat(4,1fr); border-bottom: 1px solid var(--border); }
+.meta-col { padding: 1.1rem 2rem; border-right: 1px solid var(--border); }
+.meta-col:last-child { border-right: none; }
+.ml { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-tertiary); margin-bottom: 3px; }
+.mv { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.5; }
+
+/* SECTIONS */
+.section { display: grid; grid-template-columns: 200px 1fr; gap: 3rem; padding: 3rem 2.5rem; border-bottom: 1px solid var(--border); align-items: start; }
+.section.full { display: block; padding: 3rem 2.5rem; }
+.section:last-child { border-bottom: none; }
+.slabel { font-size: 0.6rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); position: sticky; top: 4.5rem; padding-top: 2px; }
+.stitle { font-size: 1.05rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.75rem; line-height: 1.3; }
+.stext { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 0.75rem; }
+.stext:last-child { margin-bottom: 0; }
+.stext strong { color: var(--text-primary); font-weight: 500; }
+
+/* POA */
+.poa { display: grid; grid-template-columns: repeat(3,1fr); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.poa-col { background: var(--surface); padding: 1.4rem 1.5rem; }
+.poa-l { font-size: 0.6rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.6rem; }
+.poa-t { font-size: 0.82rem; color: var(--text-secondary); line-height: 1.7; }
+.poa-t strong { color: var(--text-primary); font-weight: 500; }
+
+/* PROCESSO */
+.steps { display: flex; flex-direction: column; gap: 0; margin-top: 1.25rem; }
+.step { display: grid; grid-template-columns: 90px 1fr; border: 1px solid var(--border); border-bottom: none; background: var(--surface); }
+.step:first-child { border-radius: var(--radius) var(--radius) 0 0; }
+.step:last-child { border-bottom: 1px solid var(--border); border-radius: 0 0 var(--radius) var(--radius); }
+.step-l { padding: 1rem; border-right: 1px solid var(--border); display: flex; flex-direction: column; gap: 2px; }
+.step-n { font-size: 1.1rem; font-weight: 500; color: var(--text-primary); line-height: 1; }
+.step-ph { font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.step-r { padding: 1rem 1.25rem; }
+.step-title { font-size: 0.82rem; font-weight: 500; color: var(--text-primary); margin-bottom: 3px; }
+.step-desc { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* IMAGES */
+img { width: 100%; display: block; border-radius: var(--radius); border: 1px solid var(--border); }
+.img-w { margin: 2rem -2.5rem; }
+.img-w img { border-radius: 0; border-left: none; border-right: none; border: none; }
+.img-w .img-cap { padding: 0.6rem 2.5rem; font-size: 0.68rem; color: var(--text-tertiary); letter-spacing: 0.03em; }
+.img-contained { margin: 1.5rem 0; }
+.img-contained img { border-radius: var(--radius); }
+.img-contained .img-cap { margin-top: 7px; font-size: 0.68rem; color: var(--text-tertiary); letter-spacing: 0.03em; }
+.img-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 1.5rem 0; }
+.img-grid-2 img { border-radius: var(--radius); border: 1px solid var(--border); }
+.img-grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin: 1.5rem 0; }
+.img-grid-3 img { border-radius: var(--radius); border: 1px solid var(--border); }
+
+/* IVO GRID */
+.ivo-hero { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; margin: 1.5rem 0; }
+.ivo-hero-img { background: #f9f5f0; border-radius: var(--radius); padding: 2rem; border: 1px solid var(--border); }
+.ivo-hero-img img { border: none; border-radius: 0; }
+.ivo-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin: 1.5rem 0; }
+.ivo-grid img { border: none; background: #f9f5f0; border-radius: var(--radius); padding: 0.5rem; }
+.ivo-emoji-grid { display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px; margin: 1.5rem 0; }
+.ivo-emoji-grid img { border: none; background: #f9f5f0; border-radius: var(--radius); padding: 0.5rem; }
+
+/* IMPACTOS */
+.impacts { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; margin-top: 1.25rem; }
+.impact { background: var(--surface); padding: 1.4rem 1.5rem; }
+.impact-n { font-size: 0.58rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
+.impact-t { font-size: 0.88rem; font-weight: 500; color: var(--text-primary); margin-bottom: 0.35rem; }
+.impact-d { font-size: 0.78rem; color: var(--text-secondary); line-height: 1.6; }
+
+/* CAROUSEL */
+.carousel-wrap { max-width: 100%; overflow: hidden; }
+.carousel { display: flex; transition: transform 0.4s ease; }
+.carousel-item { min-width: 100%; position: relative; }
+.carousel-item img { width: 100%; display: block; max-height: 70vh; object-fit: contain; background: #111; border-radius: 0; border: none; }
+.carousel-cap { font-size: 0.68rem; color: var(--text-tertiary); padding: 0.6rem 2.5rem; letter-spacing: 0.03em; }
+.carousel-controls { display: flex; align-items: center; justify-content: center; gap: 1.5rem; padding: 1.25rem 0 0.5rem; }
+.carousel-btn { background: none; border: 1px solid var(--border-mid); color: var(--text-secondary); width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 0.9rem; transition: border-color 0.2s, color 0.2s; display: flex; align-items: center; justify-content: center; }
+.carousel-btn:hover { border-color: var(--accent); color: var(--accent); }
+.carousel-dots { display: flex; gap: 6px; }
+.cdot { width: 6px; height: 6px; border-radius: 50%; background: var(--text-tertiary); transition: background 0.2s; cursor: pointer; }
+.cdot.active { background: var(--accent); }
+
+/* FOOTER */
+footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center; }
+.fn { font-size: 0.78rem; color: var(--text-tertiary); display: flex; align-items: center; gap: 8px; }
+.fl { font-size: 0.72rem; color: var(--text-tertiary); text-decoration: none; transition: color 0.2s; }
+.fl:hover { color: var(--accent); }
+
+/* ── MOBILE RESPONSIVE ── */
+@media (max-width: 768px) {
+
+  /* NAV */
+  nav { padding: 1rem 1.25rem; }
+  .nav-logo img { height: 32px; }
+
+  /* HERO HOME */
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-left { padding: 6rem 1.5rem 2rem; }
+  .hero-right { padding: 2rem 1.5rem 4rem; border-top: 1px solid var(--border); }
+  .hero-logo-img { width: min(260px, 80%); }
+  .hero-phrase { font-size: 1rem; }
+
+  /* CASES SECTION */
+  .cases-section { padding: 3rem 0 0; }
+  .section-header { padding: 0 1.5rem 1rem; }
+  .cases-grid { flex-direction: column; }
+  .case-card { grid-template-columns: 1fr; min-height: auto; direction: ltr !important; }
+  .case-card-reverse { direction: ltr !important; }
+  .case-card-visual { min-height: 55vw; order: 0; }
+  .case-card-body { padding: 1.75rem 1.5rem 2rem; order: 1; }
+  .case-card-title { font-size: 1.1rem; }
+
+  /* ABOUT */
+  .about-section { grid-template-columns: 1fr; gap: 1.5rem; padding: 2.5rem 1.5rem 3rem; }
+  .about-photo { width: 140px; }
+  .about-text { font-size: 0.88rem; }
+  .about-links { flex-wrap: wrap; gap: 1rem; }
+
+  /* FOOTER */
+  footer { padding: 1.25rem 1.5rem; flex-direction: column; gap: 0.75rem; align-items: flex-start; }
+
+  /* CASE PAGES — HERO */
+  .hero-text { padding: 0 1.5rem 3rem; }
+  .hero-title { font-size: clamp(1.4rem, 6vw, 2rem); }
+  .hero-tags { gap: 5px; }
+  .htag { font-size: 0.58rem; padding: 3px 8px; }
+
+  /* CASE META BAR */
+  .meta { grid-template-columns: 1fr 1fr; }
+  .meta-col { padding: 0.85rem 1.25rem; }
+  .meta-col:nth-child(2) { border-right: none; }
+  .meta-col:nth-child(3) { border-top: 1px solid var(--border); }
+  .meta-col:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+
+  /* CASE SECTIONS */
+  .section { grid-template-columns: 1fr; gap: 1rem; padding: 2rem 1.5rem; }
+  .section.full { padding: 2rem 1.5rem; }
+  .slabel { position: static; margin-bottom: 0.25rem; }
+
+  /* POA GRID */
+  .poa { grid-template-columns: 1fr; }
+  .poa-col { border-right: none; border-bottom: 1px solid var(--border); }
+  .poa-col:last-child { border-bottom: none; }
+
+  /* SEG GRID */
+  .seg { grid-template-columns: 1fr; }
+
+  /* PROCESS STEPS */
+  .step { grid-template-columns: 70px 1fr; }
+  .step-l { padding: 0.85rem 0.75rem; }
+
+  /* IMAGE GRIDS */
+  .img-grid-2 { grid-template-columns: 1fr; }
+  .img-grid-3 { grid-template-columns: 1fr 1fr; }
+  .img-w { margin: 1.5rem -1.5rem; }
+  .img-w .img-cap { padding: 0.5rem 1.5rem; }
+
+  /* IVO GRIDS */
+  .ivo-hero { grid-template-columns: 1fr; }
+  .ivo-grid { grid-template-columns: repeat(3, 1fr); }
+  .ivo-emoji-grid { grid-template-columns: repeat(4, 1fr); }
+
+  /* IMPACTS */
+  .impacts { grid-template-columns: 1fr; }
+
+  /* CAROUSEL */
+  .carousel-item img { max-height: 55vw; }
+  .carousel-controls { gap: 1rem; }
+
+  /* CASE HEADER */
+  .case-header { grid-template-columns: 1fr; gap: 1.5rem; padding: 2rem 1.5rem; }
+  .case-title { font-size: clamp(1.3rem, 5vw, 1.8rem); }
+  .case-meta { flex-direction: row; flex-wrap: wrap; gap: 1rem; }
+  .meta-item { min-width: 45%; }
+}
+
+@media (max-width: 480px) {
+  .meta { grid-template-columns: 1fr; }
+  .meta-col { border-right: none; border-bottom: 1px solid var(--border); }
+  .meta-col:last-child { border-bottom: none; }
+  .ivo-grid { grid-template-columns: repeat(2, 1fr); }
+  .ivo-emoji-grid { grid-template-columns: repeat(3, 1fr); }
+  .img-grid-3 { grid-template-columns: 1fr; }
+  .case-card-visual { min-height: 65vw; }
+  .hero-disciplines { font-size: 0.72rem; gap: 0.4rem; }
+}
+
+
+/* EVENTOS */
+.ev-intro { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; margin-top:1.25rem; }
+.ev-intro a { background:var(--surface); padding:1.4rem 1.5rem; text-decoration:none; display:block; transition:background .25s; }
+.ev-intro a:hover { background:var(--surface-2); }
+.ev-intro .poa-t { margin-top:.3rem; }
+.ev-divider { padding:4rem 2.5rem 2.5rem; border-bottom:1px solid var(--border); }
+.ev-num { font-size:.62rem; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); margin-bottom:.8rem; }
+.ev-name { font-size:clamp(1.6rem,3.4vw,2.6rem); font-weight:400; letter-spacing:-.025em; line-height:1.1; }
+.ev-sub { font-size:.85rem; color:var(--text-secondary); margin-top:.6rem; }
+.elem-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:1.5rem 0; }
+.elem-grid figure { margin:0; }
+.elem-grid figcaption { font-size:.68rem; color:var(--text-tertiary); margin-top:6px; }
+.type-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:.75rem; }
+.type-chip { font-size:.7rem; padding:5px 10px; border:1px solid var(--border-mid); border-radius:2px; color:var(--text-secondary); }
+.note { font-size:.72rem; color:var(--text-tertiary); border-left:2px solid var(--accent); padding:.2rem 0 .2rem .8rem; margin-top:1rem; }
+.zoom { overflow:hidden; border-radius:var(--radius); }
+.zoom img { transition:transform .8s cubic-bezier(.2,.7,.2,1); }
+.zoom:hover img { transform:scale(1.03); }
+.img-w.zoom { border-radius:0; }
+
+.uso-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:1.5rem 0 0; }
+.uso-grid img { aspect-ratio:4/5; object-fit:cover; object-position:center bottom; }
+@media (max-width:768px){ .uso-grid { grid-template-columns:1fr 1fr; } }
+.elem-grid img { border:none; border-radius:5%; }
+.img-contained img[src*="paleta"] { border:none; border-radius:3%; }
+.ev-divider-logo { display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; }
+.ev-logo { margin:0; width:clamp(180px,22vw,280px); flex-shrink:0; }
+.ev-logo img { border:none; border-radius:var(--radius); }
+.ev-logo figcaption { font-size:.62rem; color:var(--text-tertiary); margin-top:6px; letter-spacing:.04em; }
+.bento { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:1.5rem; }
+.sw { aspect-ratio:1; border-radius:var(--radius); padding:1rem; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; }
+.sw-n { font-size:.8rem; font-weight:500; } .sw-h { font-size:.68rem; opacity:.8; letter-spacing:.04em; }
+.sw-grad { background:linear-gradient(135deg,#71C2EF 0%,#F3C4E4 30%,#EF65B3 55%,#F0611F 85%); background-size:200% 200%; animation:gradMove 9s ease-in-out infinite; }
+@keyframes gradMove { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
+.tile { margin:0; position:relative; }
+.tile img { border:none; border-radius:var(--radius); aspect-ratio:1; object-fit:cover; }
+.tile figcaption { position:absolute; left:10px; bottom:8px; font-size:.62rem; letter-spacing:.06em; text-transform:uppercase; color:#0d0d0d; background:rgba(255,255,255,.75); padding:2px 7px; border-radius:2px; }
+.type-card { aspect-ratio:1; border-radius:var(--radius); background:var(--surface); border:1px solid var(--border); padding:1rem; display:flex; flex-direction:column; justify-content:space-around; }
+.type-card div { display:flex; align-items:baseline; gap:.8rem; }
+.tc-a { font-size:2rem; line-height:1; color:#F3C4E4; width:2.6rem; } .tc-n { font-size:.72rem; color:var(--text-secondary); }
+@media (max-width:768px){ .bento { grid-template-columns:1fr 1fr; } .ev-divider-logo { flex-direction:column; align-items:flex-start; } }
+@media (prefers-reduced-motion: reduce){ .sw-grad { animation:none; } }
+.pp-grid { display:grid; grid-template-columns:1fr auto; gap:2.5rem; align-items:center; }
+@media (max-width:768px){ .pp-grid { grid-template-columns:1fr; } }
+/* MOTION */
+.js .reveal { opacity:0; transform:translateY(28px); transition:opacity .9s ease, transform .9s cubic-bezier(.2,.7,.2,1); }
+.js .reveal.in { opacity:1; transform:none; }
+.js .reveal-d1 { transition-delay:.12s; } .js .reveal-d2 { transition-delay:.24s; }
+.hero-img { animation: heroZoom 18s ease-out both; }
+@keyframes heroZoom { from { transform:scale(1.08); } to { transform:scale(1); } }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal { opacity:1; transform:none; transition:none; }
+  .hero-img { animation:none; }
+  .zoom img { transition:none; }
+}
+@media (max-width:768px) {
+  .ev-intro { grid-template-columns:1fr; }
+  .ev-divider { padding:3rem 1.5rem 2rem; }
+  .elem-grid { grid-template-columns:1fr 1fr; }
+}
+.hero-fade { background: linear-gradient(to bottom, rgba(13,13,13,0.15) 0%, rgba(13,13,13,0.55) 45%, rgba(13,13,13,0.92) 72%, rgba(13,13,13,1) 100%); }
+nav{justify-content:flex-start!important}
+.nav-logo{position:absolute;left:50%;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="nav-back" href="index.html">← Projetos</a>
+  <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:44px; width:auto; display:block;"></a>
+</nav>
+
+<div class="hero">
+  <div class="hero-img"></div>
+  <div class="hero-fade"></div>
+  <div class="hero-text">
+    <p class="hero-eyebrow">Projetos freelance · 2025/2026</p>
+    <h1 class="hero-title">Do carnaval ao festival:<br>KVs para eventos<br>em Ouro Preto</h1>
+    <div class="hero-tags">
+      <span class="htag a">Key visual</span>
+      <span class="htag">Identidade visual</span>
+      <span class="htag">Direção de arte</span>
+      <span class="htag">Offline</span>
+      <span class="htag">Social media</span>
+    </div>
+  </div>
+</div>
+
+<div class="meta">
+  <div class="meta-col"><div class="ml">Formato</div><div class="mv">Projetos freelance</div></div>
+  <div class="meta-col"><div class="ml">Ano</div><div class="mv">2025/2026</div></div>
+  <div class="meta-col"><div class="ml">Meu papel</div><div class="mv">Conceito · Identidade visual · KV · Desdobramentos</div></div>
+  <div class="meta-col"><div class="ml">Entregas</div><div class="mv">Outdoor · Banners · Abadá · Copo · Cardápio · Ecobag · Social</div></div>
+</div>
+
+<div class="section">
+  <div class="slabel">Visão geral</div>
+  <div class="sbody">
+    <h2 class="stitle">Dois eventos, dois públicos, a mesma pergunta: o que essa marca precisa dizer?</h2>
+    <p class="stext">Dois projetos que fiz sozinha, do conceito às aplicações: a nova identidade de um bloco de carnaval privado e o KV de um festival gastronômico na sua edição em Ouro Preto. Em comum, a mesma lógica: <strong>entender o contexto antes de desenhar</strong> e construir um sistema de elementos que funcione do outdoor ao story.</p>
+    <div class="ev-intro">
+      <a href="#chapado"><div class="poa-l">01 · Carnaval 2026</div><div class="stitle" style="margin:0">Bloco Chapado</div><div class="poa-t">Resgatar a essência de um bloco que tinha perdido parte do público.</div></a>
+      <a href="#bacon"><div class="poa-l">02 · Festival gastronômico</div><div class="stitle" style="margin:0">Brazilian Bacon Day — Ouro Preto</div><div class="poa-t">Levar um festival premium para o contexto de uma cidade histórica.</div></a>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════ BLOCO CHAPADO ═════════ -->
+<div class="ev-divider ev-divider-logo" id="chapado">
+  <div>
+    <div class="ev-num reveal">01 · Carnaval 2026</div>
+    <h2 class="ev-name reveal reveal-d1">Bloco Chapado</h2>
+    <p class="ev-sub reveal reveal-d2">Carnaval privado · Identidade visual e KV · Conceito "Mais Chapado do que nunca"</p>
+  </div>
+</div>
+
+<div class="section full" style="padding-bottom:0;border-bottom:none;">
+  <div class="poa reveal">
+    <div class="poa-col"><div class="poa-l">Contexto</div><div class="poa-t">Depois de um ano marcado por mudanças que <strong>afastaram parte do público</strong>, o bloco precisava se reconectar com quem sempre fez parte da sua história.</div></div>
+    <div class="poa-col"><div class="poa-l">Conceito</div><div class="poa-t"><strong>"Mais Chapado do que nunca"</strong>: voltar às raízes com uma identidade mais autêntica, vibrante e conectada à memória afetiva do público.</div></div>
+    <div class="poa-col"><div class="poa-l">Atributos</div><div class="poa-t">Afetiva · Autêntica · Vibrante · Energizante</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">Ponto de partida</div>
+  <div class="sbody">
+    <div class="pp-grid">
+      <div>
+        <h2 class="stitle">Uma logo que o público já reconhecia</h2>
+        <p class="stext">O bloco já tinha uma <strong>logo consolidada</strong>, com o cacto e o lettering "Chapado". Em vez de substituí-la, desenvolvi a nova identidade visual a partir dela: o cacto virou o principal elemento do sistema, e as cores originais viraram a base dos gradientes.</p>
+      </div>
+      <figure class="ev-logo reveal"><img src="imagens/eventos/chapado_logo.jpg" alt="Logo oficial do Bloco Chapado"><figcaption>Logo oficial do bloco</figcaption></figure>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">Sistema visual</div>
+  <div class="sbody">
+    <h2 class="stitle">Cores originais, linguagem contemporânea</h2>
+    <p class="stext">Parti das cores que o público já reconhecia, <strong>rosa vibrante e azul claro</strong>, com o laranja como apoio. Toda a identidade foi construída em gradientes a partir delas. Os elementos também têm motivo: o <strong>cacto</strong> vem da logo e ganhou versão realista e holográfica; os <strong>raios</strong> foram resgatados de edições anteriores, somados a estrelas; e as <strong>fitas</strong> espalham os bordões do bloco, como "É irado, é chapado".</p>
+    <div class="bento reveal">
+      <div class="sw" style="background:#E9028A"><span class="sw-n">Rosa vibrante</span><span class="sw-h">#E9028A</span></div>
+      <div class="sw" style="background:#91D9F4;color:#0d0d0d"><span class="sw-n">Azul claro</span><span class="sw-h">#91D9F4</span></div>
+      <div class="sw" style="background:#F0611F"><span class="sw-n">Laranja</span><span class="sw-h">#F0611F</span></div>
+      <div class="sw sw-grad"><span class="sw-n">Gradientes</span><span class="sw-h">construídos a partir das cores originais</span></div>
+      <figure class="tile"><img src="imagens/eventos/chapado_elemento_6.jpg" alt="Cacto holográfico" loading="lazy"><figcaption>Cacto</figcaption></figure>
+      <figure class="tile"><img src="imagens/eventos/chapado_elemento_7.jpg" alt="Raios e estrelas" loading="lazy"><figcaption>Raios e estrelas</figcaption></figure>
+      <figure class="tile"><img src="imagens/eventos/chapado_elemento_8.jpg" alt="Fitas com os bordões" loading="lazy"><figcaption>Fitas</figcaption></figure>
+      <div class="type-card">
+        <div><span class="tc-a" style="font-family:'Luckiest Guy',cursive">Aa</span><span class="tc-n">Luckiest Guy</span></div>
+        <div><span class="tc-a" style="font-family:'Bebas Neue',sans-serif">Aa</span><span class="tc-n">Bebas Neue</span></div>
+        <div><span class="tc-a" style="font-family:'Oswald',sans-serif;font-weight:500">Aa</span><span class="tc-n">Oswald</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section full" style="padding-top:0;padding-bottom:0;border-bottom:none;">
+  <div class="img-w zoom reveal"><img src="imagens/eventos/chapado_adesivos.jpg" alt="Sistema de elementos aplicado em adesivos" loading="lazy"><p class="img-cap">Sistema de elementos aplicado em adesivos</p></div>
+</div>
+
+<div class="section" style="border-top:1px solid var(--border);">
+  <div class="slabel">Aplicações</div>
+  <div class="sbody">
+    <h2 class="stitle">Do outdoor ao story</h2>
+    <p class="stext">O KV foi desdobrado para os pontos de contato do bloco: mídia exterior, sinalização, abadá, copo e redes sociais.</p>
+    <div class="img-contained zoom reveal"><img src="imagens/eventos/chapado_outdoor.jpg" alt="Outdoor de divulgação" loading="lazy"></div>
+    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Outdoor de divulgação</p>
+    <div class="img-grid-2">
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/chapado_banners.jpg" alt="Banners de poste" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Banners de poste</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/chapado_copo.jpg" alt="Copo" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Copo</p></div>
+    </div>
+    <div class="img-contained zoom reveal"><img src="imagens/eventos/chapado_abada.jpg" alt="Abadás e cordão" loading="lazy"></div>
+    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Abadás e cordão</p>
+    <div class="img-grid-2">
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/chapado_stories.jpg" alt="Stories de atrações e vendas" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Stories de atrações e vendas</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/chapado_celular.jpg" alt="Divulgação no Instagram" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Divulgação no Instagram</p></div>
+    </div>
+    <p class="note">Aplicações em mockup.</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">Social</div>
+  <div class="sbody">
+    <h2 class="stitle">Pack de social: o sistema em ritmo de lançamento</h2>
+    <p class="stext">Para a divulgação no Instagram, criei um pack de posts que acompanha a jornada de vendas do bloco: o Manual do Bloco Chapado, o Packzinho do Chapado, a virada de lote e o camarote esgotado. Cada formato usa uma combinação diferente do sistema, com <strong>fitas, gradientes, texturas holográficas e o cacto</strong>, sem perder a unidade.</p>
+    <div class="uso-grid">
+      <div class="zoom reveal"><img src="imagens/eventos/chapado_uso1.jpg" alt="Post Manual do Bloco Chapado" loading="lazy"></div>
+      <div class="zoom reveal reveal-d1"><img src="imagens/eventos/chapado_uso2.jpg" alt="Post Packzinho do Chapado" loading="lazy"></div>
+      <div class="zoom reveal reveal-d2"><img src="imagens/eventos/chapado_uso3.jpg" alt="Post Sold out camarote" loading="lazy"></div>
+      <div class="zoom reveal"><img src="imagens/eventos/chapado_uso4.jpg" alt="Post Terceiro lote liberado" loading="lazy"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═════════ BACON DAY ═════════ -->
+<div class="ev-divider" id="bacon">
+  <div class="ev-num reveal">02 · Festival gastronômico · 2025</div>
+  <h2 class="ev-name reveal reveal-d1">Brazilian Bacon Day — Edição Ouro Preto</h2>
+  <p class="ev-sub reveal reveal-d2">Nova versão da marca, KV e desdobramentos</p>
+</div>
+
+<div class="section full" style="padding-bottom:0;border-bottom:none;">
+  <div class="poa reveal">
+    <div class="poa-col"><div class="poa-l">Contexto</div><div class="poa-t">Um festival que une <strong>gastronomia criativa e pop rock nacional</strong> em um ambiente premium, com o bacon como estrela e shows de grandes nomes da música.</div></div>
+    <div class="poa-col"><div class="poa-l">Desafio</div><div class="poa-t">Levar a atmosfera da marca para uma <strong>cidade histórica</strong>, preservando o lado premium e unindo a energia festiva à riqueza cultural e arquitetônica de Ouro Preto.</div></div>
+    <div class="poa-col"><div class="poa-l">Atributos</div><div class="poa-t">Urbana · Moderna · Regional · Sofisticada</div></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">Marca</div>
+  <div class="sbody">
+    <h2 class="stitle">Uma nova versão para a edição Ouro Preto</h2>
+    <p class="stext">Para a edição Ouro Preto, criei uma nova versão da assinatura do festival, com uma paleta em <strong>bordô, laranja, creme e dourado</strong> e tipografias que equilibram a energia do rock com o lado histórico e sofisticado do evento.</p>
+    <div class="img-grid-2">
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_marca_antiga.jpg" alt="Marca anterior" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Marca anterior do festival</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_logo.jpg" alt="Nova versão para Ouro Preto" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Nova versão para Ouro Preto</p></div>
+    </div>
+    <div class="img-contained zoom reveal"><img src="imagens/eventos/bacon_variacoes.jpg" alt="Variações da assinatura sobre a paleta" loading="lazy"></div>
+    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Variações da assinatura sobre a paleta</p>
+    <div class="type-row"><span class="type-chip">Germania One</span><span class="type-chip">Cinzel</span><span class="type-chip">Acumin Variable Concept</span></div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">Elementos</div>
+  <div class="sbody">
+    <h2 class="stitle">A cidade como elemento de marca</h2>
+    <p class="stext">Aqui a minha formação em Arquitetura e Urbanismo entrou no projeto. Os <strong>padrões gráficos foram desenhados a partir dos casarios e igrejas de Ouro Preto</strong>, e ao lado deles uma família de ícones que mistura gastronomia e rock. O resultado é uma linguagem que só faz sentido nesta edição.</p>
+    <div class="img-contained zoom reveal"><img src="imagens/eventos/bacon_padroes.jpg" alt="Padrões inspirados na arquitetura de Ouro Preto" loading="lazy"></div>
+    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Padrões inspirados na arquitetura de Ouro Preto</p>
+    <div class="img-grid-2">
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_icones.jpg" alt="Família de ícones" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Família de ícones</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_kv.jpg" alt="KV Onde tem bacon, tem história" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">KV — "Onde tem bacon, tem história"</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="section full" style="padding-top:0;padding-bottom:0;border-bottom:none;">
+  <div class="img-w zoom reveal"><img src="imagens/eventos/bacon_moodboard.jpg" alt="Sistema visual aplicado" loading="lazy"><p class="img-cap">Sistema visual aplicado: assinatura, mascote, fotografia, padrões e produtos</p></div>
+</div>
+
+<div class="section" style="border-top:1px solid var(--border);">
+  <div class="slabel">Aplicações</div>
+  <div class="sbody">
+    <h2 class="stitle">Do cartaz do show ao cardápio</h2>
+    <p class="stext">O KV foi desdobrado em cartazes das atrações, cardápio, produtos e redes sociais, mantendo a mesma linguagem em peças com funções bem diferentes.</p>
+    <div class="img-contained zoom reveal"><img src="imagens/eventos/bacon_cartazes.jpg" alt="Cartazes das atrações" loading="lazy"></div>
+    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Cartazes das atrações</p>
+    <div class="img-grid-2">
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_cardapio.jpg" alt="Cardápio" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Cardápio</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_ecobag.jpg" alt="Ecobag e camiseta" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Ecobag e camiseta</p></div>
+    </div>
+    <div class="img-grid-2">
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_social1.jpg" alt="Posts de divulgação" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Posts de divulgação</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_mobile.jpg" alt="Stories e copo" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Stories e copo</p></div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">O que mostram</div>
+  <div class="sbody">
+    <h2 class="stitle">KV como sistema, não como peça</h2>
+    <div class="impacts">
+      <div class="impact"><div class="impact-n">01</div><div class="impact-t">Contexto antes do desenho</div><div class="impact-d">No Chapado, a memória afetiva do público. No Bacon Day, a arquitetura da cidade. Os dois conceitos nasceram de uma leitura do contexto.</div></div>
+      <div class="impact"><div class="impact-n">02</div><div class="impact-t">Elementos que se desdobram</div><div class="impact-d">Cacto, raios e fitas; padrões e ícones. Sistemas pensados para escalar em formatos e materiais diferentes.</div></div>
+      <div class="impact"><div class="impact-n">03</div><div class="impact-t">Offline e digital no mesmo nível</div><div class="impact-d">Outdoor, banner, abadá, copo, cardápio, ecobag e social com a mesma consistência.</div></div>
+      <div class="impact"><div class="impact-n">04</div><div class="impact-t">Projeto do início ao fim</div><div class="impact-d">Conceito, identidade, KV e desdobramentos conduzidos por mim, direto com o cliente.</div></div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <span class="fn">
+    <img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.5; vertical-align:middle;">
+    <span style="color:var(--text-tertiary); font-size:0.75rem;">· 2026</span>
+  </span>
+  <a class="fl" href="index.html">← Voltar para projetos</a>
+</footer>
+
+<script>
+(function(){
+  var els=document.querySelectorAll('.reveal');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return;}
+  var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}})},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+  els.forEach(function(e){io.observe(e)});
+})();
+</script>
+</body>
+</html>
