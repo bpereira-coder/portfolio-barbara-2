@@ -97,6 +97,33 @@ footer.ft img{height:32px;opacity:.5}
 .about-photo-wrap::after{content:'';position:absolute;inset:-10px;border:1px solid rgba(201,169,110,.45);border-radius:999px 999px 36px 36px;pointer-events:none}
 @media(max-width:768px){.about-photo{width:200px!important}}
 @media(prefers-reduced-motion:reduce){.card{opacity:1!important;transform:none!important}}
+
+/* ===== CARDS v2: título abaixo da imagem ===== */
+.ivocat{transition:background-color .6s ease}
+.ivocat img.ivo-logo{left:5%;top:auto;bottom:7%;width:15%;height:auto;opacity:1;transform:none!important;z-index:2}
+.ivocat img{position:absolute;left:50%;top:50%;height:92%;width:auto;transform:translate(-50%,-46%) scale(.9);opacity:0;transition:opacity .4s,transform .6s cubic-bezier(.2,1.4,.4,1)}
+.ivocat img.on{opacity:1;transform:translate(-50%,-46%) scale(1)}
+.card:hover .ivocat img.on{transform:translate(-50%,-46%) scale(1.04)}
+
+.card.swap .img2{opacity:0;animation:swapimg 8s ease-in-out infinite}
+.card.swap[href="case-bnpl.html"] .img2{animation-delay:-4s}
+@keyframes swapimg{0%,40%{opacity:0}50%,90%{opacity:1}100%{opacity:0}}
+@media(prefers-reduced-motion:reduce){.card.swap .img2{animation:none}}
+
+.grid{gap:3.2rem 1.6rem!important}
+.card{aspect-ratio:auto!important;background:none!important;overflow:visible!important;border-radius:0!important;display:block}
+.card .media{position:relative;aspect-ratio:16/10;border-radius:var(--r);overflow:hidden;background:var(--surface)}
+.card .img{filter:none!important}
+.card:hover .img{transform:scale(1.04)}
+.card .body{position:static!important;padding:1.1rem .1rem 0}
+.card .meta{display:flex;align-items:center;gap:12px;margin-bottom:.55rem}
+.card .num{position:static!important;mix-blend-mode:normal!important;color:var(--accent);font-size:.62rem;letter-spacing:.12em}
+.card .tags{margin:0!important;color:var(--t3)!important}
+.card h2{font-size:1.3rem!important;max-width:560px;transition:color .3s}
+.card:hover h2{color:var(--accent)}
+.card .go{opacity:1!important;transform:none!important;border:none!important;color:var(--t2)!important;margin-top:.5rem}
+.card .go i{font-style:normal;display:inline-block;transition:transform .3s}
+.card:hover .go i{transform:translateX(5px)}
 </style>
 </head>
 <body>
@@ -133,14 +160,14 @@ footer.ft img{height:32px;opacity:.5}
 
 <div class="head" id="cases"><span>Projetos selecionados</span><span>04 cases</span></div>
 <section class="grid">
-  <a class="card" href="case-eva.html"><div class="img" style="background-image:url('imagens/eva_capa.jpg')"></div><div class="shade"></div><span class="num">01</span>
-    <div class="body"><div class="tags">Eva Benefícios · Branding · Mascote</div><h2>Uma startup de benefícios flexíveis com cara, voz e mascote</h2><span class="go">Ver case →</span></div></a>
-  <a class="card" href="case-eventos.html"><div class="img" style="background-image:url('imagens/eventos/chapado_outdoor.jpg')"></div><div class="shade"></div><span class="num">02</span>
-    <div class="body"><div class="tags">Freelance · Key visual · Offline</div><h2>Do carnaval ao festival: KVs para eventos em Ouro Preto</h2><span class="go">Ver case →</span></div></a>
-  <a class="card has-video" href="case-black.html"><div class="img" style="background-image:url('imagens/black/bf_capa_card.jpg')"></div><video class="vid" src="imagens/black/bf_splash_card.mp4" muted playsinline preload="none"></video><div class="shade"></div><span class="num">03</span>
-    <div class="body"><div class="tags">Dotz · Campanha · Multicanal</div><h2>Ative a Dotz: uma Black Friday em todos os canais</h2><span class="go">Ver case →</span></div></a>
-  <a class="card" href="case-bnpl.html"><div class="img" style="background-image:url('imagens/capa_do_arquivo.png')"></div><div class="shade"></div><span class="num">04</span>
-    <div class="body"><div class="tags">Dotz · Direção de arte · PDV</div><h2>Do corredor do supermercado ao app: o lançamento do Crédito Dotz</h2><span class="go">Ver case →</span></div></a>
+  <a class="card" href="case-eva.html"><div class="media ivocat" id="ivoCat" style="background:#FACB7B"><img class="ivo-logo" src="imagens/eva2/capa/eva_logo.svg" alt="Eva"><img src="imagens/eva2/fam/hero_alimentacao.svg" alt="" data-bg="#FACB7B" class="on"><img src="imagens/eva2/fam/hero_refeicao.svg" alt="" data-bg="#FF698F"><img src="imagens/eva2/fam/hero_transporte.svg" alt="" data-bg="#FCE4F1"><img src="imagens/eva2/fam/hero_educacao.svg" alt="" data-bg="#F7B0CE"><img src="imagens/eva2/fam/hero_saude.svg" alt="" data-bg="#F1946B"><img src="imagens/eva2/fam/hero_cultura.svg" alt="" data-bg="#FACB7B"><img src="imagens/eva2/fam/hero_saldo-livre.svg" alt="" data-bg="#FF698F"><img src="imagens/eva2/fam/hero_combustivel.svg" alt="" data-bg="#F7B0CE"></div>
+    <div class="body"><div class="meta"><span class="num">01</span><span class="tags">Eva Benefícios · Branding · Mascote</span></div><h2>Uma startup de benefícios flexíveis com cara, voz e mascote</h2><span class="go">Ver case <i>→</i></span></div></a>
+  <a class="card swap" href="case-eventos.html"><div class="media"><div class="img" style="background-image:url('imagens/eventos/chapado_outdoor.jpg')"></div><div class="img img2" style="background-image:url('imagens/eventos/bacon_moodboard.jpg')"></div></div>
+    <div class="body"><div class="meta"><span class="num">02</span><span class="tags">Freelance · Key visual · Offline</span></div><h2>Do carnaval ao festival: KVs para eventos em Ouro Preto</h2><span class="go">Ver case <i>→</i></span></div></a>
+  <a class="card has-video" href="case-black.html"><div class="media"><div class="img" style="background-image:url('imagens/black/bf_capa_card.jpg')"></div><video class="vid" src="imagens/black/bf_splash_card.mp4" muted playsinline loop preload="none"></video></div>
+    <div class="body"><div class="meta"><span class="num">03</span><span class="tags">Dotz · Campanha · Multicanal</span></div><h2>Ative a Dotz: uma Black Friday em todos os canais</h2><span class="go">Ver case <i>→</i></span></div></a>
+  <a class="card swap" href="case-bnpl.html"><div class="media"><div class="img" style="background-image:url('imagens/capa_do_arquivo.png')"></div><div class="img img2" style="background-image:url('imagens/bnpl_takeone.jpg')"></div></div>
+    <div class="body"><div class="meta"><span class="num">04</span><span class="tags">Dotz · Direção de arte · PDV</span></div><h2>Do corredor do supermercado ao app: o lançamento do Crédito Dotz</h2><span class="go">Ver case <i>→</i></span></div></a>
 </section>
 
 
@@ -178,6 +205,11 @@ document.querySelectorAll('.card.has-video').forEach(c=>{
     new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting?v.play().catch(()=>{}):v.pause()),{threshold:.5}).observe(c);
   }
 });
+</script>
+<script>
+(function(){const m=document.getElementById('ivoCat');if(!m)return;const im=[...m.querySelectorAll('img[data-bg]')],base=im.map(i=>i.getAttribute('src'));let k=0,c=0;
+const show=n=>{im[k].classList.remove('on');k=n;c++;im[k].src=base[k]+'?c='+c;im[k].classList.add('on');m.style.backgroundColor=im[k].dataset.bg};
+const next=()=>setTimeout(()=>{show((k+1)%im.length);next()},base[k].includes('alimentacao')?4800:3200);next()})();
 </script>
 </body>
 </html>
