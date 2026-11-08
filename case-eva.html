@@ -53,7 +53,7 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 .sub-lead{font-size:.95rem;color:var(--t2);max-width:640px}
 
 /* ---------- HERO ---------- */
-.hero{position:relative;min-height:94vh;background:var(--creme);overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;align-items:center;gap:3rem;padding:7rem 4rem 4rem}
+.hero{position:relative;min-height:94vh;background:var(--creme);overflow:hidden;display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:3rem;padding:7rem 4rem 4rem}
 .leaves{position:absolute;inset:0;pointer-events:none;z-index:0}
 .leaf{position:absolute;top:-8%;background-size:contain;background-repeat:no-repeat;animation:fall linear infinite}
 @keyframes fall{0%{transform:translate(0,0) rotate(0deg)}50%{transform:translate(6vw,55vh) rotate(160deg)}100%{transform:translate(-2vw,112vh) rotate(320deg)}}
@@ -74,6 +74,22 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 @keyframes rise{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 .tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:1.8rem;opacity:0;animation:rise .9s .35s forwards}
 .tags span{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;padding:6px 11px;border:1px solid rgba(73,29,80,.3);border-radius:999px;color:var(--plum)}
+.hphoto{position:absolute;top:0;right:0;bottom:0;width:47%;z-index:2}
+.hp-img{width:100%;height:100%;object-fit:cover;object-position:40% 30%;display:block;animation:heroZoom 1.4s cubic-bezier(.2,.7,.2,1) both}
+@keyframes heroZoom{from{opacity:0;transform:scale(1.06)}to{opacity:1;transform:none}}
+.hphoto .hsticker{left:-70px;bottom:9%;right:auto}
+.hframe{position:relative;z-index:2;justify-self:center;width:min(560px,42vw);opacity:0;animation:rise .9s .25s cubic-bezier(.2,.7,.2,1) forwards}
+.lp{border:2.5px solid var(--plum);border-radius:24px;background:#fff;overflow:hidden;box-shadow:12px 12px 0 var(--pink)}
+.lp-bar{display:flex;align-items:center;gap:7px;padding:11px 16px;border-bottom:2.5px solid var(--plum);background:var(--creme)}
+.lp-bar i{width:11px;height:11px;border-radius:50%;border:2px solid var(--plum)}
+.lp-bar img{height:16px;margin-left:10px}
+.lp-dots{margin-left:auto;display:flex;gap:5px}.lp-dots b{width:14px;height:14px;border-radius:50%;border:1.5px solid rgba(73,29,80,.25)}
+.lp-img{aspect-ratio:4/4.3;overflow:hidden}
+.lp-img img{width:100%;height:100%;object-fit:cover;object-position:center 30%;display:block;transition:transform 6s ease}
+.hframe:hover .lp-img img{transform:scale(1.05)}
+.hsticker{position:absolute;left:-46px;bottom:-34px;width:150px;height:150px;transform:rotate(-10deg);z-index:3}
+.hsticker img{position:absolute;inset:0;margin:auto;max-width:100%;max-height:100%;opacity:0;transform:scale(.6) rotate(-14deg);transition:opacity .25s,transform .45s cubic-bezier(.3,1.6,.5,1);filter:drop-shadow(3px 0 0 #fff) drop-shadow(-3px 0 0 #fff) drop-shadow(0 3px 0 #fff) drop-shadow(0 -3px 0 #fff) drop-shadow(0 10px 14px rgba(73,29,80,.28))}
+.hsticker img.on{opacity:1;transform:none}
 .hmos{position:relative;z-index:2;justify-self:center;width:min(620px,44vw);aspect-ratio:1/1;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:10px}
 .hmos figure{margin:0;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 14px 30px rgba(73,29,80,.12);opacity:0;animation:tileIn .8s cubic-bezier(.2,.8,.2,1) forwards}
 .hmos img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .8s}
@@ -212,6 +228,28 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 .doc-hint{position:absolute;left:50%;bottom:10px;transform:translateX(-50%);background:rgba(36,24,60,.85);color:#fff;font-size:.62rem;padding:5px 10px;border-radius:999px;white-space:nowrap;transition:opacity .3s;z-index:2}
 .doc:hover .doc-hint{opacity:0}
 
+.ctx{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:2rem}
+.ctx-c{margin:0;border:1px solid var(--border-mid);border-radius:18px;overflow:hidden;background:var(--surface)}
+.ctx-img{aspect-ratio:16/10;background:var(--creme);display:grid;place-items:center;overflow:hidden}
+.ctx-img img{width:100%;height:100%;object-fit:contain;padding:8%}
+.ctx-c figcaption{padding:1.4rem 1.4rem 1.5rem;font-size:.95rem;color:var(--t2)}
+.ctx-c figcaption b{display:block;font-family:'Poppins';font-weight:600;font-size:1.05rem;color:var(--accent);margin-bottom:.15rem}
+.pub{margin-top:3.5rem}
+.pub h3{font-family:'Poppins';font-weight:600;font-size:clamp(1.5rem,2.6vw,2.1rem);letter-spacing:-.02em;color:var(--t1);margin-bottom:1.2rem}
+.pub-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.pub-c{position:relative;border-radius:22px;padding:1.8rem;min-height:250px;overflow:hidden}
+.pub-c small{display:block;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:.3rem;opacity:.85}
+.pub-c strong{display:block;font-family:'Poppins';font-weight:600;font-size:clamp(2rem,3.6vw,3rem);line-height:1;letter-spacing:-.03em}
+.pub-c p{font-size:1.05rem;margin-top:.5rem;max-width:58%}
+.pub-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:1.4rem;max-width:60%}
+.pub-tags span{font-size:.74rem;border-radius:999px;padding:4px 11px}
+.pub-c.rh{background:var(--creme);color:var(--plum)}
+.pub-c.rh .pub-tags span{border:1.5px solid var(--plum)}
+.pub-c.col{background:var(--pink);color:#fff}
+.pub-c.col .pub-tags span{border:1.5px solid #fff}
+.pub-img{position:absolute;right:-6%;bottom:-14%;width:38%;border-radius:14px;transform:rotate(6deg);box-shadow:0 14px 30px rgba(73,29,80,.25)}
+.pub-emo{position:absolute;right:6%;bottom:8%;width:30%;max-width:170px;transform:rotate(-8deg);animation:floaty 3s ease-in-out infinite alternate}
+@keyframes floaty{to{transform:rotate(4deg) translateY(-8px)}}
 .roles{display:flex;flex-wrap:wrap;gap:8px;margin-top:1.4rem}
 .roles span{font-size:.78rem;color:var(--t2);border:1px solid var(--border-mid);border-radius:999px;padding:7px 14px}
 .roles b{color:var(--accent);font-weight:500;margin-right:6px}
@@ -355,6 +393,37 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 .ia-steps li{display:grid!important;grid-template-columns:2.2rem 1fr;column-gap:.6rem}
 .ia-steps li span{grid-row:1/3;padding-top:3px}
 .q{background:#FFF1B8;color:#7a5a00!important;border-radius:4px;padding:1px 4px}
+.ia2{border:2.5px solid var(--plum);border-radius:24px;background:#fff;padding:2.2rem}
+.ia2-head{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:1.6rem}
+.ia2-head h3{font-family:'Poppins';font-weight:600;font-size:1.7rem;letter-spacing:-.02em;color:var(--plum);line-height:1.1}
+.ia2-tool{font-size:.8rem;font-weight:600;color:var(--plum);border:2px solid var(--plum);border-radius:999px;padding:4px 12px}
+.ia2-stage{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:1.4rem;max-width:820px;margin:0 auto}
+.ia2-card{margin:0;border-radius:20px;overflow:hidden;background:var(--creme);border:2px solid rgba(73,29,80,.15)}
+.ia2-card.anim{border-color:var(--pink);box-shadow:8px 8px 0 var(--pink)}
+.ia2-card img{width:100%;aspect-ratio:480/540;object-fit:cover;display:block}
+.ia2-card figcaption{text-align:center;font-size:.85rem;font-weight:600;color:var(--plum);padding:8px 0 12px}
+.ia2-arrow{position:relative;width:70px;height:2.5px;background:var(--plum)}
+.ia2-arrow::after{content:'';position:absolute;right:-2px;top:50%;width:12px;height:12px;border-top:2.5px solid var(--plum);border-right:2.5px solid var(--plum);transform:translateY(-50%) rotate(45deg)}
+.ia2-arrow span{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:var(--pink);color:#fff;font-weight:700;font-size:.8rem;border-radius:999px;padding:5px 11px}
+.ia2-cats{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:1.6rem}
+.ia2-cats button{font:inherit;font-size:.78rem;color:var(--plum);background:none;border:1.5px solid rgba(73,29,80,.3);border-radius:999px;padding:4px 12px;cursor:pointer}
+.ia2-cats button.on{background:var(--plum);border-color:var(--plum);color:var(--creme)}
+.ia2-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0;margin:1.8rem 0 0}
+.ia2-steps li{background:var(--lilas);border-radius:14px;padding:.9rem 1rem;font-family:'Poppins';font-weight:500;font-size:.92rem;color:var(--plum);line-height:1.3}
+.ia2-steps b{display:block;color:var(--pink);font-size:.75rem;margin-bottom:.3rem}
+.ia3{background:var(--plum);border-radius:24px;padding:2.4rem;color:var(--creme)}
+.ia3-head{display:flex;justify-content:space-between;align-items:end;gap:2rem;margin-bottom:1.6rem}
+.ia3-head h3{font-family:'Poppins';font-weight:600;font-size:clamp(1.5rem,2.6vw,2.2rem);line-height:1.05;letter-spacing:-.02em;max-width:420px}
+.ia3-tool{display:inline-block;margin-top:.8rem;font-size:.75rem;font-weight:600;border:1.5px solid var(--rosa);color:var(--rosa);border-radius:999px;padding:3px 11px}
+.ia3-steps{list-style:none;padding:0;margin:0;display:grid;gap:6px;max-width:380px}
+.ia3-steps li{font-size:.9rem;color:#F3DDEA;display:flex;gap:10px}
+.ia3-steps b{color:var(--rosa);font-size:.75rem;padding-top:2px}
+.ia3-strip{background:var(--creme);border-radius:18px;padding:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.iap{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:6px}
+.iap img{width:100%;aspect-ratio:480/540;object-fit:cover;border-radius:12px;display:block}
+.iap img:last-child{box-shadow:0 0 0 2px var(--pink)}
+.iap img:first-child{transform:scale(1.04);clip-path:inset(1.5% round 12px)}
+.iap i{font-style:normal;font-weight:700;color:var(--pink)}
 .ph{border:2px dashed #C9962E;background:repeating-linear-gradient(45deg,rgba(201,150,46,.08) 0 14px,rgba(201,150,46,.03) 14px 28px);border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;color:#9C6E10;min-height:220px}
 .ph b{font-size:.92rem;letter-spacing:.04em;text-transform:uppercase;font-weight:600;margin-bottom:.5rem}
 .ph span{font-size:.8rem;color:#8A6A2A;max-width:440px;line-height:1.5}
@@ -390,7 +459,7 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 
 @media(max-width:900px){
   .doc{height:420px}
-  .hero{grid-template-columns:1fr;padding:6rem 1.25rem 3rem}.hcat{width:min(380px,88vw)}.hmos{width:100%;max-width:520px}.slides-track img{height:150px}
+  .hero{grid-template-columns:1fr;padding:6rem 1.25rem 3rem}.hcat{width:min(380px,88vw)}.hphoto{position:relative;width:auto;height:72vh;margin:1.5rem -1.25rem -3rem}.hphoto .hsticker{width:110px;height:110px;left:12px;bottom:-20px}.slides-track img{height:150px}
   .ivo-intro{flex-direction:column}
   .sheet{padding:1.25rem}.sheet-head{flex-direction:column;align-items:start}.sheet-grid{grid-template-columns:repeat(4,minmax(0,1fr));padding:12px}
   .wrap{padding:0 1.25rem}section{padding:4rem 0}
@@ -400,6 +469,7 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
   .intro,.brand,.brand-hero,.duo,.backstage,.origin,.fam,.mock-wrap,.two,.g2,.closing{grid-template-columns:1fr}
   .kit{grid-template-columns:1fr}.card.wide{grid-column:auto}
   .g3,.g4,.kv-row{grid-template-columns:1fr 1fr}
+  .ctx,.pub-grid{grid-template-columns:1fr}.ia3{padding:1.25rem}.ia3-head{flex-direction:column;align-items:start}.ia3-strip{grid-template-columns:1fr;padding:12px}.ia2{padding:1.25rem}.ia2-stage{grid-template-columns:1fr;justify-items:center}.ia2-arrow{width:2.5px;height:46px}.ia2-arrow::after{right:auto;left:50%;top:auto;bottom:-2px;transform:translateX(-50%) rotate(135deg)}.ia2-card{width:min(300px,100%)}.ia2-steps{grid-template-columns:1fr}.pub-c p,.pub-tags{max-width:62%}
   .ia{padding:1.25rem}.ia-head{flex-direction:column;align-items:start}.ia-body,.ia-steps{grid-template-columns:1fr}
   .phones{grid-template-columns:1fr 1fr;padding:1.25rem}
   .wall{padding:1.25rem;min-height:640px}
@@ -407,6 +477,9 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
   nav{padding:1rem 1.25rem}
 }
 @media(prefers-reduced-motion:reduce){.sticker{animation:none!important;opacity:1}.doc-track{animation-duration:90s}}
+.nav-next{margin-left:auto;font-size:.72rem;letter-spacing:.07em;text-transform:uppercase;text-decoration:none;color:var(--t2);border:1px solid var(--border-mid);border-radius:999px;padding:7px 14px;transition:color .2s,border-color .2s}
+.nav-next:hover{color:var(--accent);border-color:var(--accent)}
+@media(max-width:600px){.nav-next{padding:6px 10px;font-size:.62rem}}
 </style>
 </head>
 <body>
@@ -414,6 +487,7 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 <nav>
   <a class="nav-back" href="index.html#cases">← Projetos</a>
   <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira"></a>
+  <a class="nav-next" href="case-eventos.html">Próximo case →</a>
 </nav>
 
 <!-- 1. CAPA EM MOVIMENTO: Ivos como stickers -->
@@ -766,13 +840,11 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,82.398987%,88.198853%);fill-opacity:1;" d="M 243.601562 254.730469 C 233.136719 231.40625 204.40625 214.65625 170.59375 214.65625 C 136.785156 214.65625 108.054688 231.40625 97.589844 254.730469 C 97.589844 254.730469 134.417969 282.582031 170.59375 282.582031 C 206.773438 282.582031 243.601562 254.730469 243.601562 254.730469 "/>
 <path style=" stroke:none;fill-rule:nonzero;fill:rgb(14.498901%,3.09906%,24.299622%);fill-opacity:1;" d="M 245.390625 241.328125 C 230.542969 220.089844 201.992188 206.417969 170.59375 206.417969 C 139.195312 206.417969 110.640625 220.085938 95.796875 241.328125 C 81.027344 225.1875 71.398438 204.269531 69.53125 181.1875 L 271.660156 181.1875 C 269.792969 204.269531 260.160156 225.1875 245.390625 241.328125 M 108.019531 252.667969 C 119.261719 234.644531 143.511719 222.894531 170.59375 222.894531 C 197.679688 222.894531 221.933594 234.644531 233.175781 252.667969 C 215.929688 266.234375 194.191406 274.34375 170.59375 274.34375 C 147 274.34375 125.261719 266.234375 108.019531 252.667969 M 280.230469 164.714844 L 60.960938 164.714844 C 56.414062 164.714844 52.726562 168.398438 52.726562 172.945312 C 52.726562 237.941406 105.601562 290.816406 170.59375 290.816406 C 235.589844 290.816406 288.464844 237.941406 288.464844 172.945312 C 288.464844 168.398438 284.777344 164.714844 280.230469 164.714844 "/>
 </g>
-</defs></svg><div class="hmos" aria-label="Peças do case Eva: ensaio, apresentação comercial, app, EvaTalks, landing page e Ivo">
-  <figure class="m-a"><img src="imagens/eva2/foto_4170.jpg" alt="Ensaio Eva com o cartão"></figure>
-  <figure class="m-b"><img src="imagens/eva2/apres/a-06.jpg" alt="Slide da apresentação comercial"></figure>
-  <figure class="m-c"><img src="imagens/eva2/app_home.jpg" alt="Tela do app Eva"></figure>
-  <figure class="m-d"><img src="imagens/eva2/evatalks_8444.jpg" alt="Peça do EvaTalks"></figure>
-  <figure class="m-e"><img src="imagens/eva2/fam/hero_saldo-livre.svg" alt="Ivo, mascote da Eva"></figure>
-  <figure class="m-f"><img src="imagens/landing_page.png" alt="Landing page Eva"></figure>
+</defs></svg><div class="hphoto">
+  <img class="hp-img" src="imagens/eva2/foto_4170.jpg" alt="Ensaio Eva: colaboradora segurando o cartão Eva">
+  <div class="hsticker" id="hSticker" aria-hidden="true">
+    <img src="imagens/eva2/emo/apaixonado.png" alt="" class="on"><img src="imagens/eva2/emo/festa.png" alt=""><img src="imagens/eva2/emo/oculos.png" alt=""><img src="imagens/eva2/emo/beijo.png" alt=""><img src="imagens/eva2/emo/chorando-rir.png" alt=""><img src="imagens/eva2/emo/derretendo.png" alt=""><img src="imagens/eva2/emo/coracoes.png" alt="">
+  </div>
 </div>
 </header>
 
@@ -783,16 +855,15 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
   <div><small>Time</small><p>Gerente de marketing, social media, SEO e 2 designers</p></div>
 </div>
 
-<!-- 2. CONTEXTO + MARCA -->
+<!-- 2. CONTEXTO -->
 <section>
   <div class="wrap">
     <p class="sec-label">Contexto</p>
     <h2>Redesign para o digital e um mascote para a marca</h2>
-    <p class="lead">A Eva já tinha logo, ícones e cartão quando cheguei. Em dupla, adaptamos a marca para o digital e criamos um novo manual. Sozinha, criei o <strong>Ivo</strong> e cuidei da comunicação do dia a dia.</p>
     <div class="roles">
-      <span><b>Já existia</b> logo, ícones, cartão</span>
-      <span><b>Em dupla</b> redesign e manual</span>
-      <span><b>Sozinha</b> Ivo, social, motion, KVs</span>
+      <span><b>Já existia</b> logo, ícones e cartão</span>
+      <span><b>Em dupla</b> redesign para o digital e novo manual</span>
+      <span><b>Sozinha</b> Ivo, social, motion e KVs</span>
     </div>
     <p class="lead mt"><strong>Dois públicos, uma marca.</strong> Na Eva, quem compra é o RH e quem usa é o colaborador. Por isso a marca tinha dois tons: no deck comercial, nas landing pages e no EvaTalks, clareza e credibilidade para quem decide; no app e nas redes, o Ivo e uma linguagem leve para quem usa no dia a dia.</p>
   </div>
@@ -850,25 +921,12 @@ h2{font-size:clamp(1.6rem,3vw,2.4rem);font-weight:400;letter-spacing:-.025em;lin
     </div>
 
 
-    <div class="ia mt">
-      <div class="ia-head">
-        <h3>Do vetor ao movimento, com IA.</h3>
-        <p>O Ivo foi desenhado à mão. Para animá-lo, usei IA generativa e mantive o controle do personagem.</p>
+    <div class="ia3 mt">
+      <div class="ia3-head">
+        <div><h3>Do vetor ao movimento, com IA.</h3><span class="ia3-tool">Ferramenta: Claude</span></div>
+        <ol class="ia3-steps"><li><b>01</b>Ivo estático + descrição do movimento</li><li><b>02</b>Primeira versão gerada pela IA</li><li><b>03</b>Ajustes pedidos por mim até ficar fiel ao Ivo</li></ol>
       </div>
-      <div class="ia-body">
-        <ol class="ia-steps">
-          <li><span>01</span><b>Entrada</b><p>O Ivo estático e a descrição de como cada um devia se mexer: o de alimentação passando de carrinho e dando tchau, o de transporte dirigindo e assobiando, o de saúde fazendo musculação, o de cultura comendo pipoca.</p></li>
-          <li><span>02</span><b>O que a IA gerou</b><p>Uma primeira versão animada de cada personagem, a partir do vetor original.</p></li>
-          <li><span>03</span><b>Meu refinamento</b><p>Revisei cada animação e pedi os ajustes até o movimento ficar fiel ao Ivo.</p></li>
-        </ol>
-        <div class="ia-final">
-          <div class="ia-pair">
-            <figure><img src="imagens/eva2/fam_saude.jpg" alt="Ivo saúde estático"><figcaption>Estático</figcaption></figure>
-            <figure><img src="imagens/eva2/fam/ivo_saude.svg" alt="Ivo saúde animado"><figcaption>Animado</figcaption></figure>
-          </div>
-          <p class="ia-tool">Ferramenta: Claude</p>
-        </div>
-      </div>
+      <div class="ia3-strip"><div class="iap"><img src="imagens/eva2/fam_saldo-livre.jpg" alt="Ivo saldo livre estático"><i>→</i><img src="imagens/eva2/fam/ivo_saldo-livre.svg" alt="Ivo saldo livre animado"></div><div class="iap"><img src="imagens/eva2/fam_saude.jpg" alt="Ivo saúde estático"><i>→</i><img src="imagens/eva2/fam/ivo_saude.svg" alt="Ivo saúde animado"></div><div class="iap"><img src="imagens/eva2/fam_cultura.jpg" alt="Ivo cultura estático"><i>→</i><img src="imagens/eva2/fam/ivo_cultura.svg" alt="Ivo cultura animado"></div></div>
     </div>
 
     <div class="duo mt">
@@ -1024,6 +1082,7 @@ ivoLoop(document.getElementById('ivoAnim'),document.getElementById('hero'));ivoL
 (function(){const st=document.getElementById('hcat');if(!st)return;const im=[...st.querySelectorAll('img')],nm=document.getElementById('hcatName'),dt=document.getElementById('hcatDots');const base=im.map(i=>i.getAttribute('src'));im.forEach(()=>dt.appendChild(document.createElement('b')));let k=0,c=0;
 const show=n=>{im[k].classList.remove('on');dt.children[k].classList.remove('on');k=n;c++;im[k].src=base[k]+'?h='+c;im[k].classList.add('on');dt.children[k].classList.add('on');nm.textContent=im[k].dataset.n};
 const next=()=>setTimeout(()=>{show((k+1)%im.length);next()},base[k].includes('alimentacao')?4800:3200);show(0);next()})();
+(function(){const st=document.getElementById('hSticker');if(!st)return;const im=[...st.querySelectorAll('img')];let k=0;setInterval(()=>{im[k].classList.remove('on');k=(k+1)%im.length;im[k].classList.add('on')},1600)})();
 </script>
 </body>
 </html>
