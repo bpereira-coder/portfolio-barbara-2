@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="imagens/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case — Crédito Dotz · Bárbara Pereira</title>
+<title>Case — Crédito Dotz: direção de arte para convencer em segundos · Bárbara Pereira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -302,17 +302,29 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 .img-grid-2 img, .img-contained img { width:100%; display:block; border-radius:10px; border:1px solid rgba(255,255,255,0.08); }
 .img-grid-2 img { aspect-ratio:1/1; object-fit:cover; }
 .img-contained { margin:1.5rem 0; }
-.img-contained .img-cap { margin-top:7px; font-size:0.68rem; color:var(--text-tertiary); padding:0; }
+.img-contained .img-cap { margin-top:7px; font-size:.8125rem; color:var(--text-tertiary); padding:0; }
 @media (max-width:768px){ .img-grid-2 { grid-template-columns:1fr; } }
 nav{justify-content:flex-start!important}
 .nav-logo{position:absolute;left:50%;transform:translateX(-50%)}
+
+/* legibilidade (contraste >= 4.5:1) */
+:root{--text-secondary:#B5B5B0;--text-tertiary:#9C9A96}
+.stext,.poa-t,.impact-d,.step-desc,.ev-sub{font-size:1rem}
+.mv{font-size:.9rem}
+.img-cap,.img-w .img-cap,.img-contained .img-cap,.carousel-cap,.elem-grid figcaption,.ev-logo figcaption,.mails figcaption,.note,.sw-h{font-size:.8125rem!important}
+.slabel,.poa-l,.impact-n,.ml,.step-ph{font-size:.72rem}
+.next-case{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:2rem 2.5rem;border-top:1px solid var(--border);font-size:.85rem}
+.next-case a{color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.next-case a:hover{color:var(--accent)}
+.next-case a.nx{color:var(--text-primary)}
+@media(max-width:700px){.next-case{flex-direction:column;align-items:flex-start;padding:1.5rem 1.25rem}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-back" href="index.html">← Projetos</a>
-  <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:48px; width:auto; display:block;"></a>
+  <a class="nav-back" href="index.html#cases">← Projetos</a>
+  <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:44px; width:auto; display:block;"></a>
 </nav>
 
 <!-- HERO -->
@@ -320,13 +332,14 @@ nav{justify-content:flex-start!important}
   <div class="hero-img"></div>
   <div class="hero-fade"></div>
   <div class="hero-text">
-    <p class="hero-eyebrow">Dotz · 2026</p>
-    <h1 class="hero-title">Do corredor do supermercado<br>ao app: o lançamento<br>do Crédito Dotz</h1>
+    <p class="hero-eyebrow">Dotz · 2025</p>
+    <h1 class="hero-title">Crédito Dotz: direção de arte<br>para convencer em segundos,<br>no corredor e no app</h1>
     <div class="hero-tags">
-      <span class="htag a">Estratégia omnichannel</span>
-      <span class="htag">CRM</span>
-      <span class="htag">Comunicação de produto</span>
+      <span class="htag a">Key visual</span>
       <span class="htag">Direção de arte</span>
+      <span class="htag">PDV</span>
+      <span class="htag">Lançamento de produto</span>
+      <span class="htag">CRM</span>
     </div>
   </div>
 </div>
@@ -334,8 +347,8 @@ nav{justify-content:flex-start!important}
 <!-- META -->
 <div class="meta">
   <div class="meta-col"><div class="ml">Empresa</div><div class="mv">Dotz</div></div>
-  <div class="meta-col"><div class="ml">Ano</div><div class="mv">2026</div></div>
-  <div class="meta-col"><div class="ml">Meu papel</div><div class="mv">Estratégia · Arquitetura de mensagens · Direção de arte</div></div>
+  <div class="meta-col"><div class="ml">Ano</div><div class="mv">2025</div></div>
+  <div class="meta-col"><div class="ml">Meu papel</div><div class="mv">KV e direção de arte · Estratégia em conjunto com a agência</div></div>
   <div class="meta-col"><div class="ml">Times</div><div class="mv">Produto · Marketing e branding · CRM · Varejo · Diretoria</div></div>
 </div>
 
@@ -344,15 +357,15 @@ nav{justify-content:flex-start!important}
   <div class="poa">
     <div class="poa-col">
       <div class="poa-l">Problema</div>
-      <div class="poa-t">A comunicação do Crédito Dotz estava fragmentada entre canais — mensagens técnicas demais, sem proposta de valor clara, que geravam ruído cognitivo e derrubavam a conversão no PDV.</div>
+      <div class="poa-t">A comunicação do Crédito Dotz estava espalhada pelos canais, com mensagens técnicas e sem uma proposta de valor clara. No supermercado, isso não convencia.</div>
     </div>
     <div class="poa-col">
       <div class="poa-l">Objetivo</div>
-      <div class="poa-t">Transformar um ecossistema de mensagens confusas em uma <strong>jornada segmentada e eficiente</strong> — do corredor do supermercado ao CRM — com um único norte: usar o App Dotz.</div>
+      <div class="poa-t">Organizar a comunicação em uma <strong>jornada única</strong>, do corredor do supermercado ao CRM, com um só destino: usar o App Dotz.</div>
     </div>
     <div class="poa-col">
       <div class="poa-l">Minha atuação</div>
-      <div class="poa-t">Mapeamento de perfis e jornadas, arquitetura de mensagens por segmento, <strong>direção de arte do enxoval digital e físico</strong> e estruturação da régua de CRM. Dev e automação com o time técnico.</div>
+      <div class="poa-t"><strong>Criei o KV da campanha e fiz a direção de arte</strong> das peças digitais e de PDV. A estratégia de comunicação do produto (perfis, mensagens e régua de CRM) foi construída em conjunto com a agência. Desenvolvimento e automação ficaram com o time técnico.</div>
     </div>
   </div>
 </div>
@@ -361,41 +374,41 @@ nav{justify-content:flex-start!important}
 <div class="section">
   <div class="slabel">Processo</div>
   <div class="sbody">
-    <h2 class="stitle">Entender o público antes de desenhar qualquer coisa</h2>
+    <h2 class="stitle">Entender o público antes de desenhar</h2>
     <div class="steps">
       <div class="step">
         <div class="step-l"><span class="step-n">01</span><span class="step-ph">Diagnóstico</span></div>
         <div class="step-r">
-          <div class="step-title">Mapeamento de perfis e barreiras financeiras</div>
-          <div class="step-desc">Dois perfis com necessidades opostas: o <strong>Transactor</strong> (crédito experiente, quer organização e mais Dotz) e o <strong>Propenso</strong> (com acesso restrito a cartão, para quem o produto é inclusão financeira real). Essa diferença moldou toda a estratégia.</div>
+          <div class="step-title">Com a agência: dois perfis opostos</div>
+          <div class="step-desc">Identificamos dois perfis com necessidades opostas: o <strong>Transactor</strong>, que já usa crédito e quer mais Dotz, e o <strong>Propenso</strong>, que tem pouco acesso a cartão e para quem o produto é inclusão financeira.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-l"><span class="step-n">02</span><span class="step-ph">Mensageria</span></div>
+        <div class="step-l"><span class="step-n">02</span><span class="step-ph">Mensagens</span></div>
         <div class="step-r">
-          <div class="step-title">Arquitetura de mensagens por perfil e canal</div>
-          <div class="step-desc">Mensagem principal para canais abertos — equilibrando apelos dos dois perfis — e mensagens específicas no CRM, onde a segmentação era possível. Cada trecho analisado por função: quem convence, como e por quê.</div>
+          <div class="step-title">Com a agência: uma mensagem principal e mensagens no CRM</div>
+          <div class="step-desc">Uma mensagem principal para canais abertos, que funcionasse para os dois perfis, e mensagens específicas no CRM, onde dá para segmentar.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-l"><span class="step-n">03</span><span class="step-ph">Direção de arte</span></div>
+        <div class="step-l"><span class="step-n">03</span><span class="step-ph">KV e direção de arte</span></div>
         <div class="step-r">
-          <div class="step-title">Clareza visual em ambiente de alta distração</div>
-          <div class="step-desc">No PDV, o consumidor tem segundos. Alto contraste, hierarquia rígida e CTA único em todas as peças. Reescrevemos o roteiro do PDV com três focos: clareza, inteligência no design e protagonismo para o App.</div>
+          <div class="step-title">Feito por mim: uma mensagem por peça</div>
+          <div class="step-desc">No PDV, o consumidor tem segundos. Por isso cada peça tem uma única mensagem, alto contraste e um único CTA: baixar o app.</div>
         </div>
       </div>
       <div class="step">
         <div class="step-l"><span class="step-n">04</span><span class="step-ph">CRM</span></div>
         <div class="step-r">
-          <div class="step-title">Régua de 30 dias segmentada por comportamento</div>
-          <div class="step-desc">6 segmentos de usuário, fluxos distintos por canal e momento (D0, D+2, D+4, D+10). Além do lançamento, estruturamos comunicação contínua (BAU) e testes A/B para validar qual abordagem gerava mais conversão.</div>
+          <div class="step-title">Régua de 30 dias</div>
+          <div class="step-desc">Uma régua de 30 dias com 6 segmentos e envios em D0, D+2, D+4 e D+10, além de testes A/B.</div>
         </div>
       </div>
     </div>
 
     <div class="img-w">
       <img src="imagens/mockup_emails.png" alt="Régua de lançamento segmentada" style="object-fit:contain; background:#111;">
-      <p class="img-cap">Régua de lançamento — fluxos por perfil e canal com variações de mensagem e timing</p>
+      <p class="img-cap">Régua de lançamento: fluxos por perfil e canal</p>
     </div>
   </div>
 </div>
@@ -405,11 +418,11 @@ nav{justify-content:flex-start!important}
   <div class="slabel">Segmentação</div>
   <div class="sbody">
     <h2 class="stitle">Dois públicos, duas lógicas</h2>
-    <p class="stext">A mesma mensagem para perfis tão distintos não funcionaria para nenhum dos dois. A segmentação foi o que permitiu comunicação com precisão onde era possível, e coesão onde era necessário.</p>
+    <p class="stext">A mesma mensagem não funcionaria para perfis tão diferentes. Por isso, uma mensagem principal nos canais abertos e mensagens específicas onde dava para segmentar.</p>
     <div class="seg">
       <div class="seg-col">
         <div class="seg-name"><span class="seg-dot" style="background:#C9A96E;"></span>Transactor</div>
-        <div class="seg-txt">Usuário experiente de crédito, concentra compras no cartão para maximizar benefícios. Para ele, o BNPL libera limite e ainda acumula Dotz.</div>
+        <div class="seg-txt">Usuário experiente de crédito, concentra compras no cartão para maximizar benefícios. Para ele, o Crédito Dotz não ocupa limite e ainda acumula Dotz.</div>
         <div class="seg-pills">
           <span class="seg-pill">Ganhe mais Dotz</span>
           <span class="seg-pill">Organize suas finanças</span>
@@ -418,7 +431,7 @@ nav{justify-content:flex-start!important}
       </div>
       <div class="seg-col">
         <div class="seg-name"><span class="seg-dot" style="background:#7F77DD;"></span>Propenso</div>
-        <div class="seg-txt">Acesso restrito a cartão, paga via Pix. Para ele, Crédito Dotz é inclusão financeira — comprar agora, pagar depois, com previsibilidade.</div>
+        <div class="seg-txt">Acesso restrito a cartão, paga via Pix. Para ele, o Crédito Dotz é inclusão financeira: comprar agora e pagar depois, com previsibilidade.</div>
         <div class="seg-pills">
           <span class="seg-pill">Sem cartão? Sem problema</span>
           <span class="seg-pill">Parcelas que cabem no bolso</span>
@@ -429,23 +442,20 @@ nav{justify-content:flex-start!important}
   </div>
 </div>
 
-<!-- SISTEMA E APLICAÇÕES -->
-
-</div>
 
 <!-- SISTEMA -->
 <div class="section">
   <div class="slabel">Sistema</div>
   <div class="sbody">
     <h2 class="stitle">Do corredor do supermercado ao inbox</h2>
-    <p class="stext">O lançamento do Crédito Dotz foi pensado como um ecossistema — não um conjunto de peças isoladas. Cada canal tinha um papel específico na jornada do consumidor, todos convergindo para um único objetivo: usar o App Dotz.</p>
+    <p class="stext">O lançamento foi pensado como uma jornada, não como peças soltas. Cada canal tinha um papel, e todos levavam para o mesmo lugar: o App Dotz.</p>
 
     <div class="img-w">
       <img src="imagens/canais_de_divulgacao.png" alt="Canais de divulgação" style="object-fit:contain; background:#f9f5f0;">
-      <p class="img-cap">Canais básicos de lançamento — App, TikTok, Site, PDV e Instagram</p>
+      <p class="img-cap">Canais de lançamento: App, TikTok, Site, PDV e Instagram</p>
     </div>
 
-    <p class="stext" style="margin-top:1.5rem;">No varejo físico, o enxoval cercava o consumidor do corredor ao caixa. No digital, a comunicação seguia uma narrativa sequencial — do banner no site ao carrossel de feed — sempre direcionando para o App. No CRM, régua segmentada por perfil e comportamento garantia a mensagem certa no momento certo.</p>
+    <p class="stext" style="margin-top:1.5rem;">No supermercado, as peças acompanhavam o consumidor do corredor ao caixa. No digital, a comunicação seguia uma sequência, do banner no site ao carrossel de feed, sempre levando para o App. No CRM, a régua segmentada mandava mensagens diferentes para cada perfil.</p>
   </div>
 </div>
 
@@ -454,57 +464,59 @@ nav{justify-content:flex-start!important}
   <div class="slabel">Peças</div>
   <div class="sbody">
     <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin-bottom:0.5rem; letter-spacing:0.03em;">PDV: do corredor ao caixa</h3>
-    <p class="stext">No supermercado, o consumidor tem segundos. As peças usam alto contraste, hierarquia rígida e um único CTA: baixar o App Dotz.</p>
+    <p class="stext">No supermercado, o consumidor tem segundos. As peças usam alto contraste, hierarquia clara e um único CTA: baixar o App Dotz.</p>
     <div class="img-contained">
       <img src="imagens/bnpl_wobbler.jpg" alt="Wobbler PDV" loading="lazy">
       <p class="img-cap">Wobbler: material de gôndola para alta visibilidade no corredor</p>
     </div>
     <div class="img-grid-2">
-      <div><img src="imagens/bnpl_takeone.jpg" alt="Take One: material no ponto de pagamento" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Take One: material no ponto de pagamento</p></div>
-      <div><img src="imagens/bnpl_bolsao.jpg" alt="Bolsão acrílico: display de caixa no momento de decisão" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Bolsão acrílico: display de caixa no momento de decisão</p></div>
+      <div><img src="imagens/bnpl_takeone.jpg" alt="Take One: material no ponto de pagamento" loading="lazy"><p style="font-size:.8125rem; color:var(--text-tertiary); margin-top:6px;">Take One: material no ponto de pagamento</p></div>
+      <div><img src="imagens/bnpl_bolsao.jpg" alt="Bolsão acrílico: display de caixa no momento de decisão" loading="lazy"><p style="font-size:.8125rem; color:var(--text-tertiary); margin-top:6px;">Bolsão acrílico: display de caixa no momento de decisão</p></div>
     </div>
     <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">Digital</h3>
     <p class="stext">No digital, a comunicação seguia uma narrativa sequencial, do banner no site aos stories, sempre levando para o App.</p>
     <div class="img-grid-2">
-      <div><img src="imagens/bnpl_laptop.jpg" alt="Banner no site dotz.com.br: ponto de entrada digital" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Banner no site dotz.com.br: ponto de entrada digital</p></div>
-      <div><img src="imagens/bnpl_stories.jpg" alt="Stories no Instagram" loading="lazy"><p style="font-size:0.68rem; color:var(--text-tertiary); margin-top:6px;">Stories no Instagram</p></div>
+      <div><img src="imagens/bnpl_laptop.jpg" alt="Banner no site dotz.com.br: ponto de entrada digital" loading="lazy"><p style="font-size:.8125rem; color:var(--text-tertiary); margin-top:6px;">Banner no site dotz.com.br: ponto de entrada digital</p></div>
+      <div><img src="imagens/bnpl_stories.jpg" alt="Stories no Instagram" loading="lazy"><p style="font-size:.8125rem; color:var(--text-tertiary); margin-top:6px;">Stories no Instagram</p></div>
     </div>
   </div>
 </div>
 
-<!-- RESULTADOS -->
+<!-- O QUE ENTREGAMOS -->
 <div class="section">
-  <div class="slabel">Resultados</div>
+  <div class="slabel">Entregas</div>
   <div class="sbody">
-    <h2 class="stitle">Impacto estrutural</h2>
+    <h2 class="stitle">O que entregamos</h2>
     <div class="impacts">
       <div class="impact">
         <div class="impact-n">01</div>
-        <div class="impact-t">Linguagem unificada em 6 canais</div>
-        <div class="impact-d">Do wobbler no supermercado ao email de CRM — mesma lógica de mensagem, adaptada ao canal. Fim da fragmentação que gerava ruído.</div>
+        <div class="impact-t">Uma linguagem para seis canais</div>
+        <div class="impact-d">Do wobbler no supermercado ao e-mail, a mesma lógica de mensagem, adaptada a cada canal.</div>
       </div>
       <div class="impact">
         <div class="impact-n">02</div>
-        <div class="impact-t">Redução de fricção no PDV</div>
-        <div class="impact-d">Termos financeiros complexos traduzidos em 3 passos. Hierarquia visual e CTA único eliminaram o atrito no momento de decisão.</div>
+        <div class="impact-t">PDV mais simples</div>
+        <div class="impact-d">Termos financeiros traduzidos em 3 passos, com hierarquia clara e um só CTA.</div>
       </div>
       <div class="impact">
         <div class="impact-n">03</div>
-        <div class="impact-t">CRM segmentado por comportamento</div>
-        <div class="impact-d">6 segmentos de usuário com fluxos e mensagens distintas — mais testes A/B estruturados para validar o que convertia.</div>
+        <div class="impact-t">CRM segmentado</div>
+        <div class="impact-d">Seis segmentos com mensagens diferentes e testes A/B para comparar abordagens.</div>
       </div>
       <div class="impact">
         <div class="impact-n">04</div>
-        <div class="impact-t">Sistema que o time usa de forma autônoma</div>
-        <div class="impact-d">Vocabulário aprovado, hierarquia por canal e lógica de segmentação documentados — não um conjunto de peças, uma arquitetura.</div>
+        <div class="impact-t">Um sistema documentado</div>
+        <div class="impact-d">Vocabulário, hierarquia por canal e lógica de segmentação registrados para o time usar.</div>
       </div>
     </div>
   </div>
 </div>
 
+<div class="next-case"><a href="index.html#cases">← Todos os projetos</a><a class="nx" href="case-eva.html">Próximo: Eva Benefícios →</a></div>
+
 <footer>
-  <span class="fn"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:40px; width:auto; display:inline-block; vertical-align:middle;"> <span style="color:var(--text-tertiary); font-size:0.75rem; vertical-align:middle;">· 2026</span></span>
-  <a class="fl" href="index.html">← Voltar para projetos</a>
+  <span class="fn"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.6; vertical-align:middle;"> <span style="color:var(--text-tertiary); font-size:0.8125rem; vertical-align:middle;">Bárbara Pereira · 2026</span></span>
+  <a class="fl" href="index.html#cases">← Voltar para projetos</a>
 </footer>
 
 

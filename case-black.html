@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="imagens/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case — Black Friday Dotz 2026 · Bárbara Pereira</title>
+<title>Case — Black Friday Dotz: um KV, nove momentos, seis canais · Bárbara Pereira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Luckiest+Guy&family=Bebas+Neue&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
@@ -273,7 +273,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 .ev-sub { font-size:.85rem; color:var(--text-secondary); margin-top:.6rem; }
 .elem-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:1.5rem 0; }
 .elem-grid figure { margin:0; }
-.elem-grid figcaption { font-size:.68rem; color:var(--text-tertiary); margin-top:6px; }
+.elem-grid figcaption { font-size:.8125rem; color:var(--text-tertiary); margin-top:6px; }
 .type-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:.75rem; }
 .type-chip { font-size:.7rem; padding:5px 10px; border:1px solid var(--border-mid); border-radius:2px; color:var(--text-secondary); }
 .note { font-size:.72rem; color:var(--text-tertiary); border-left:2px solid var(--accent); padding:.2rem 0 .2rem .8rem; margin-top:1rem; }
@@ -293,7 +293,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 .ev-logo figcaption { font-size:.62rem; color:var(--text-tertiary); margin-top:6px; letter-spacing:.04em; }
 .bento { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:1.5rem; }
 .sw { aspect-ratio:1; border-radius:var(--radius); padding:1rem; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; }
-.sw-n { font-size:.8rem; font-weight:500; } .sw-h { font-size:.68rem; opacity:.8; letter-spacing:.04em; }
+.sw-n { font-size:.8rem; font-weight:500; } .sw-h { font-size:.8125rem; opacity:.8; letter-spacing:.04em; }
 .sw-grad { background:linear-gradient(135deg,#71C2EF 0%,#F3C4E4 30%,#EF65B3 55%,#F0611F 85%); background-size:200% 200%; animation:gradMove 9s ease-in-out infinite; }
 @keyframes gradMove { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
 .tile { margin:0; position:relative; }
@@ -308,7 +308,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 @media (max-width:768px){ .pp-grid { grid-template-columns:1fr; } }
 .mails { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin-top:1rem; }
 .mails figure { margin:0; }
-.mails figcaption { font-size:.68rem; color:var(--text-tertiary); margin-top:6px; }
+.mails figcaption { font-size:.8125rem; color:var(--text-tertiary); margin-top:6px; }
 .mail { height:520px; overflow:hidden; border-radius:var(--radius); border:1px solid var(--border); background:#000; }
 .mail img { border:none; border-radius:0; transition:transform 7s ease-in-out; }
 .mail:hover img { transform:translateY(calc(-100% + 520px)); }
@@ -343,12 +343,28 @@ nav{justify-content:flex-start!important}
 .phone video{width:100%;height:100%;object-fit:cover;border-radius:30px;display:block;background:#000}
 .phone::before{content:'';position:absolute;top:18px;left:50%;transform:translateX(-50%);width:70px;height:20px;border-radius:12px;background:#000;z-index:2}
 @media(max-width:768px){.splash{grid-template-columns:1fr}.phone{width:220px;margin:0 auto}}
+.checks{list-style:none;padding:0;margin:.5rem 0 1rem;display:grid;gap:.55rem}
+.checks li{position:relative;padding-left:1.6rem;font-size:1rem;color:var(--text-secondary);line-height:1.6}
+.checks li::before{content:'';position:absolute;left:0;top:.45em;width:.8rem;height:.8rem;border-radius:50%;border:1.5px solid var(--accent)}
+.q{background:rgba(232,197,71,.12);color:#E8C547!important;border-left-color:#E8C547!important}
+
+/* legibilidade (contraste >= 4.5:1) */
+:root{--text-secondary:#B5B5B0;--text-tertiary:#9C9A96}
+.stext,.poa-t,.impact-d,.step-desc,.ev-sub{font-size:1rem}
+.mv{font-size:.9rem}
+.img-cap,.img-w .img-cap,.img-contained .img-cap,.carousel-cap,.elem-grid figcaption,.ev-logo figcaption,.mails figcaption,.note,.sw-h{font-size:.8125rem!important}
+.slabel,.poa-l,.impact-n,.ml,.step-ph{font-size:.72rem}
+.next-case{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:2rem 2.5rem;border-top:1px solid var(--border);font-size:.85rem}
+.next-case a{color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.next-case a:hover{color:var(--accent)}
+.next-case a.nx{color:var(--text-primary)}
+@media(max-width:700px){.next-case{flex-direction:column;align-items:flex-start;padding:1.5rem 1.25rem}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-back" href="index.html">← Projetos</a>
+  <a class="nav-back" href="index.html#cases">← Projetos</a>
   <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:44px; width:auto; display:block;"></a>
 </nav>
 
@@ -357,20 +373,21 @@ nav{justify-content:flex-start!important}
   <div class="hero-fade"></div>
   <div class="hero-text">
     <p class="hero-eyebrow">Dotz · 2026</p>
-    <h1 class="hero-title">Ative a Dotz:<br>uma Black Friday<br>em todos os canais</h1>
+    <h1 class="hero-title">Black Friday Dotz:<br>um KV, nove momentos,<br>seis canais</h1>
     <div class="hero-tags">
       <span class="htag a">Campanha</span>
       <span class="htag">Key visual</span>
       <span class="htag">Desdobramentos</span>
-      <span class="htag">Multicanal</span>
+      <span class="htag">Revisão de agência</span>
+      <span class="htag">E-mail marketing</span>
     </div>
   </div>
 </div>
 
 <div class="meta">
   <div class="meta-col"><div class="ml">Empresa</div><div class="mv">Dotz</div></div>
-  <div class="meta-col"><div class="ml">Ano</div><div class="mv">2026</div></div>
-  <div class="meta-col"><div class="ml">Meu papel</div><div class="mv">Conceito em parceria com a agência · Desdobramentos</div></div>
+  <div class="meta-col"><div class="ml">Ano</div><div class="mv">2026 · campanha no ar em novembro</div></div>
+  <div class="meta-col"><div class="ml">Meu papel</div><div class="mv">Validação do KV e de todas as peças · E-mails · Desdobramentos</div></div>
   <div class="meta-col"><div class="ml">Canais</div><div class="mv">App · Instagram · Site · E-mail · LinkedIn · Assinatura de e-mail</div></div>
 </div>
 
@@ -378,7 +395,7 @@ nav{justify-content:flex-start!important}
   <div class="poa reveal">
     <div class="poa-col"><div class="poa-l">Contexto</div><div class="poa-t">A Black Friday é o momento em que a vantagem aparece em todo lugar, e a campanha da Dotz também precisava estar em <strong>todos os canais</strong>, com mais de 400 parceiros com ofertas.</div></div>
     <div class="poa-col"><div class="poa-l">Desafio</div><div class="poa-t">Manter a cara da Dotz em uma campanha com <strong>nove momentos diferentes</strong>, do Esquenta ao Cyber Monday, e muitas ofertas disputando atenção.</div></div>
-    <div class="poa-col"><div class="poa-l">Minha atuação</div><div class="poa-t">Participei da concepção da campanha com a agência e <strong>desenvolvi os desdobramentos</strong> para os canais da Dotz, a partir do KV.</div></div>
+    <div class="poa-col"><div class="poa-l">Minha atuação</div><div class="poa-t">O KV foi criado pela agência e validado por mim e pelo time de Branding. A partir dele, <strong>toda peça da campanha passou pela minha validação</strong>: as da agência e as diagramações feitas pela designer júnior do time. Os e-mails marketing foram feitos por mim, replicando a identidade da campanha.</div></div>
   </div>
 </div>
 
@@ -388,8 +405,8 @@ nav{justify-content:flex-start!important}
     <h2 class="stitle">"Ative a Dotz e ganhe mais"</h2>
     <p class="stext">A assinatura da campanha traz um <strong>botão de ativar</strong> junto ao lettering de Black Friday, a mesma ideia da mensagem principal: ative a Dotz e ganhe cashback em Dotz nas compras. A assinatura se adapta ao laranja e ao preto e ganha versões para outros momentos, como o Cyber Monday.</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/black/bf_logo.jpg" alt="Assinatura sobre laranja e preto" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Assinatura sobre laranja e preto</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/black/bf_variacoes.jpg" alt="Variações e versão Cyber Monday" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Variações e versão Cyber Monday</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/black/bf_logo.jpg" alt="Assinatura sobre laranja e preto" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Assinatura sobre laranja e preto</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/black/bf_variacoes.jpg" alt="Variações e versão Cyber Monday" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Variações e versão Cyber Monday</p></div>
     </div>
   </div>
 </div>
@@ -402,7 +419,7 @@ nav{justify-content:flex-start!important}
         <h2 class="stitle">O botão ganha vida no app</h2>
         <p class="stext">Na splash screen do app Dotz, a ideia da assinatura vira movimento: o botão é <strong>ativado</strong> e revela a marca da Black Friday. É a mensagem "Ative a Dotz" acontecendo na tela, logo no primeiro contato com o app.</p>
       </div>
-      <div class="phone reveal"><video src="imagens/black/bf_splash.mp4" poster="imagens/black/bf_splash_poster.jpg" autoplay muted loop playsinline></video></div>
+      <div class="phone reveal"><video src="imagens/black/bf_splash.mp4" poster="imagens/black/bf_splash_poster.jpg" preload="auto" autoplay muted loop playsinline></video></div>
     </div>
   </div>
 </div>
@@ -422,12 +439,12 @@ nav{justify-content:flex-start!important}
       <div class="sw" style="background:#4100C3"><span class="sw-n">Cobalto</span><span class="sw-h">#4100C3</span></div>
     </div>
     <div class="img-contained zoom reveal"><img src="imagens/black/bf_tipografia.jpg" alt="Factor A para a marca, Neutronic para as chamadas de oferta" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Factor A para a marca, Neutronic para as chamadas de oferta</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Factor A para a marca, Neutronic para as chamadas de oferta</p>
   </div>
 </div>
 
 <div class="section full" style="padding-top:0;padding-bottom:0;border-bottom:none;">
-  <div class="img-w zoom reveal"><img src="imagens/black/bf_kv.jpg" alt="KV — "Ative a Dotz e ganhe mais"" loading="lazy"><p class="img-cap">KV — "Ative a Dotz e ganhe mais"</p></div>
+  <div class="img-w zoom reveal"><img src="imagens/black/bf_kv.jpg" alt="KV Ative a Dotz e ganhe mais" loading="lazy"><p class="img-cap">KV — "Ative a Dotz e ganhe mais"</p></div>
 </div>
 
 <div class="section" style="border-top:1px solid var(--border);">
@@ -436,7 +453,21 @@ nav{justify-content:flex-start!important}
     <h2 class="stitle">Um selo para cada momento da campanha</h2>
     <p class="stext">Para dar ritmo a semanas de campanha sem perder a unidade, cada momento ganhou um selo, criado em conjunto com a agência: Esquenta Black Friday, Só Hoje, Double Date 11.11, Semana Bônus Progressivo, Festival de Cupons, Black em Dobro, Black Friday, Última Chamada e Cyber Monday. Cada momento tem sua cor de apoio e seu elemento, sempre com a assinatura e o mesmo CTA.</p>
     <div class="img-contained zoom reveal"><img src="imagens/black/bf_selos.jpg" alt="Selos dos nove momentos da campanha" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Selos dos nove momentos da campanha</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Selos dos nove momentos da campanha</p>
+  </div>
+</div>
+
+<div class="section">
+  <div class="slabel">Revisão e consistência</div>
+  <div class="sbody">
+    <h2 class="stitle">Muitas mãos, uma campanha só</h2>
+    <p class="stext">Com nove momentos e muitas peças sendo produzidas ao mesmo tempo, por agência e time interno, o risco era a campanha se fragmentar. Em cada peça, eu checava:</p>
+    <ul class="checks">
+      <li>a peça precisava parecer claramente da Dotz e trazer o conceito que alinhamos juntos;</li>
+      <li>uma cor de apoio por composição;</li>
+      <li>a Factor A, fonte da marca, como principal, para a peça parecer da Dotz;</li>
+      <li>a Neutronic para dar cara de campanha.</li>
+    </ul>
   </div>
 </div>
 
@@ -446,23 +477,23 @@ nav{justify-content:flex-start!important}
     <h2 class="stitle">Do feed ao app</h2>
     <p class="stext">A campanha foi desdobrada para os principais pontos de contato da Dotz: posts e stories, vitrine de categorias com parceiros, site, e-mail marketing, app e até a assinatura de e-mail do time.</p>
     <div class="img-contained zoom reveal"><img src="imagens/black/bf_posts.jpg" alt="Posts e stories com ofertas de parceiros" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Posts e stories com ofertas de parceiros</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Posts e stories com ofertas de parceiros</p>
     <div class="img-contained zoom reveal"><img src="imagens/black/bf_categorias.jpg" alt="Vitrine de categorias e oferta de parceiro" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Vitrine de categorias e oferta de parceiro</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Vitrine de categorias e oferta de parceiro</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/black/bf_site.jpg" alt="Site" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Site</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/black/bf_app.jpg" alt="App Dotz" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">App Dotz</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/black/bf_site.jpg" alt="Site" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Site</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/black/bf_app.jpg" alt="App Dotz" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">App Dotz</p></div>
     </div>
     <h3 style="font-size:0.82rem; font-weight:500; color:var(--text-primary); margin: 2rem 0 0.5rem; letter-spacing:0.03em;">E-mail marketing</h3>
-    <p class="stext">Uma régua de e-mails acompanhou os momentos da campanha. Passe o mouse sobre cada e-mail para ver a peça inteira.</p>
+    <p class="stext">Uma régua de e-mails acompanhou os momentos da campanha. E-mails criados por mim. Passe o mouse sobre cada e-mail para ver a peça inteira.</p>
     <div class="mails reveal">
       <figure><div class="mail"><img src="imagens/black/bf_email_festivalcupons.jpg" alt="E-mail Festival de Cupons" loading="lazy"></div><figcaption>Festival de Cupons</figcaption></figure>
       <figure><div class="mail"><img src="imagens/black/bf_email_singlesday.jpg" alt="E-mail 11.11" loading="lazy"></div><figcaption>Double Date 11.11</figcaption></figure>
       <figure><div class="mail"><img src="imagens/black/bf_email_bonusprogressivo.jpg" alt="E-mail Bônus Progressivo" loading="lazy"></div><figcaption>Semana Bônus Progressivo</figcaption></figure>
     </div>
     <div class="img-grid-2" style="margin-top:2rem">
-      <div class="reveal"><div class="zoom"><img src="imagens/black/bf_instagram.jpg" alt="Perfil no Instagram" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Perfil no Instagram</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/black/bf_assinatura.jpg" alt="Assinatura de e-mail do time" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Assinatura de e-mail do time</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/black/bf_instagram.jpg" alt="Perfil no Instagram" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Perfil no Instagram</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/black/bf_assinatura.jpg" alt="Assinatura de e-mail do time" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Assinatura de e-mail do time</p></div>
     </div>
     
   </div>
@@ -476,17 +507,16 @@ nav{justify-content:flex-start!important}
       <div class="impact"><div class="impact-n">01</div><div class="impact-t">Consistência em escala</div><div class="impact-d">Uma mesma linguagem em feed, stories, site, e-mail, app e LinkedIn.</div></div>
       <div class="impact"><div class="impact-n">02</div><div class="impact-t">Sistema para muitos momentos</div><div class="impact-d">Nove fases de campanha com variação de cor e elemento, sem perder a assinatura.</div></div>
       <div class="impact"><div class="impact-n">03</div><div class="impact-t">Oferta em primeiro plano</div><div class="impact-d">Hierarquia pensada para preço, cashback e CTA aparecerem primeiro.</div></div>
-      <div class="impact"><div class="impact-n">04</div><div class="impact-t">Trabalho com agência</div><div class="impact-d">Conceito construído junto com a agência e desdobrado pelo time de Branding.</div></div>
+      <div class="impact"><div class="impact-n">04</div><div class="impact-t">Padrão garantido em todas as mãos</div><div class="impact-d">KV da agência, diagramações da designer júnior e e-mails meus: tudo passou pelos mesmos critérios de marca.</div></div>
     </div>
   </div>
 </div>
 
+<div class="next-case"><a href="index.html#cases">← Todos os projetos</a><a class="nx" href="case-bnpl.html">Próximo: Crédito Dotz →</a></div>
+
 <footer>
-  <span class="fn">
-    <img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.5; vertical-align:middle;">
-    <span style="color:var(--text-tertiary); font-size:0.75rem;">· 2026</span>
-  </span>
-  <a class="fl" href="index.html">← Voltar para projetos</a>
+  <span class="fn"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.6; vertical-align:middle;"> <span style="color:var(--text-tertiary); font-size:0.8125rem; vertical-align:middle;">Bárbara Pereira · 2026</span></span>
+  <a class="fl" href="index.html#cases">← Voltar para projetos</a>
 </footer>
 <script>
 (function(){

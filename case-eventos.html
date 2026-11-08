@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <link rel="icon" type="image/png" href="imagens/favicon.png">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Case — KVs para eventos · Bárbara Pereira</title>
+<title>Case — KVs autorais: Bloco Chapado e Bacon Day Ouro Preto · Bárbara Pereira</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Luckiest+Guy&family=Bebas+Neue&family=Oswald:wght@300;500;700&display=swap" rel="stylesheet">
 <style>
@@ -273,7 +273,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 .ev-sub { font-size:.85rem; color:var(--text-secondary); margin-top:.6rem; }
 .elem-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:1.5rem 0; }
 .elem-grid figure { margin:0; }
-.elem-grid figcaption { font-size:.68rem; color:var(--text-tertiary); margin-top:6px; }
+.elem-grid figcaption { font-size:.8125rem; color:var(--text-tertiary); margin-top:6px; }
 .type-row { display:flex; flex-wrap:wrap; gap:8px; margin-top:.75rem; }
 .type-chip { font-size:.7rem; padding:5px 10px; border:1px solid var(--border-mid); border-radius:2px; color:var(--text-secondary); }
 .note { font-size:.72rem; color:var(--text-tertiary); border-left:2px solid var(--accent); padding:.2rem 0 .2rem .8rem; margin-top:1rem; }
@@ -293,7 +293,7 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 .ev-logo figcaption { font-size:.62rem; color:var(--text-tertiary); margin-top:6px; letter-spacing:.04em; }
 .bento { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:1.5rem; }
 .sw { aspect-ratio:1; border-radius:var(--radius); padding:1rem; display:flex; flex-direction:column; justify-content:flex-end; color:#fff; }
-.sw-n { font-size:.8rem; font-weight:500; } .sw-h { font-size:.68rem; opacity:.8; letter-spacing:.04em; }
+.sw-n { font-size:.8rem; font-weight:500; } .sw-h { font-size:.8125rem; opacity:.8; letter-spacing:.04em; }
 .sw-grad { background:linear-gradient(135deg,#71C2EF 0%,#F3C4E4 30%,#EF65B3 55%,#F0611F 85%); background-size:200% 200%; animation:gradMove 9s ease-in-out infinite; }
 @keyframes gradMove { 0%,100% { background-position:0% 50%; } 50% { background-position:100% 50%; } }
 .tile { margin:0; position:relative; }
@@ -325,12 +325,29 @@ footer { padding: 1.5rem 2.5rem; border-top: 1px solid var(--border); display: f
 .hero-fade { background: linear-gradient(to bottom, rgba(13,13,13,0.15) 0%, rgba(13,13,13,0.55) 45%, rgba(13,13,13,0.92) 72%, rgba(13,13,13,1) 100%); }
 nav{justify-content:flex-start!important}
 .nav-logo{position:absolute;left:50%;transform:translateX(-50%)}
+.mood{display:grid;grid-template-columns:1fr 1.4fr;gap:2rem;align-items:center}
+.mood-img{margin:0}.mood-img img{width:100%;border-radius:var(--radius);display:block}
+.mood-img figcaption{font-size:.8125rem;color:var(--text-tertiary);margin-top:6px}
+.q{background:rgba(232,197,71,.12);color:#E8C547!important;border-left-color:#E8C547!important}
+@media(max-width:700px){.mood{grid-template-columns:1fr}}
+
+/* legibilidade (contraste >= 4.5:1) */
+:root{--text-secondary:#B5B5B0;--text-tertiary:#9C9A96}
+.stext,.poa-t,.impact-d,.step-desc,.ev-sub{font-size:1rem}
+.mv{font-size:.9rem}
+.img-cap,.img-w .img-cap,.img-contained .img-cap,.carousel-cap,.elem-grid figcaption,.ev-logo figcaption,.mails figcaption,.note,.sw-h{font-size:.8125rem!important}
+.slabel,.poa-l,.impact-n,.ml,.step-ph{font-size:.72rem}
+.next-case{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:2rem 2.5rem;border-top:1px solid var(--border);font-size:.85rem}
+.next-case a{color:var(--text-secondary);text-decoration:none;transition:color .2s}
+.next-case a:hover{color:var(--accent)}
+.next-case a.nx{color:var(--text-primary)}
+@media(max-width:700px){.next-case{flex-direction:column;align-items:flex-start;padding:1.5rem 1.25rem}}
 </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-back" href="index.html">← Projetos</a>
+  <a class="nav-back" href="index.html#cases">← Projetos</a>
   <a class="nav-logo" href="index.html"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:44px; width:auto; display:block;"></a>
 </nav>
 
@@ -339,13 +356,14 @@ nav{justify-content:flex-start!important}
   <div class="hero-fade"></div>
   <div class="hero-text">
     <p class="hero-eyebrow">Projetos freelance · 2025/2026</p>
-    <h1 class="hero-title">Do carnaval ao festival:<br>KVs para eventos<br>em Ouro Preto</h1>
+    <h1 class="hero-title">KVs autorais do conceito ao abadá:<br>Bloco Chapado e<br>Bacon Day Ouro Preto</h1>
     <div class="hero-tags">
       <span class="htag a">Key visual</span>
       <span class="htag">Identidade visual</span>
       <span class="htag">Direção de arte</span>
       <span class="htag">Offline</span>
       <span class="htag">Social media</span>
+      <span class="htag">IA generativa</span>
     </div>
   </div>
 </div>
@@ -431,16 +449,16 @@ nav{justify-content:flex-start!important}
     <h2 class="stitle">Do outdoor ao story</h2>
     <p class="stext">O KV foi desdobrado para os pontos de contato do bloco: mídia exterior, sinalização, abadá, copo e redes sociais.</p>
     <div class="img-contained zoom reveal"><img src="imagens/eventos/chapado_outdoor.jpg" alt="Outdoor de divulgação" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Outdoor de divulgação</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Outdoor de divulgação</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/eventos/chapado_banners.jpg" alt="Banners de poste" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Banners de poste</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/chapado_copo.jpg" alt="Copo" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Copo</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/chapado_banners.jpg" alt="Banners de poste" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Banners de poste</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/chapado_copo.jpg" alt="Copo" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Copo</p></div>
     </div>
     <div class="img-contained zoom reveal"><img src="imagens/eventos/chapado_abada.jpg" alt="Abadás e cordão" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Abadás e cordão</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Abadás e cordão</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/eventos/chapado_stories.jpg" alt="Stories de atrações e vendas" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Stories de atrações e vendas</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/chapado_celular.jpg" alt="Divulgação no Instagram" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Divulgação no Instagram</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/chapado_stories.jpg" alt="Stories de atrações e vendas" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Stories de atrações e vendas</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/chapado_celular.jpg" alt="Divulgação no Instagram" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Divulgação no Instagram</p></div>
     </div>
     <p class="note">Aplicações em mockup.</p>
   </div>
@@ -476,16 +494,24 @@ nav{justify-content:flex-start!important}
 </div>
 
 <div class="section">
+  <div class="slabel">Conceito</div>
+  <div class="sbody">
+    <h2 class="stitle">Ideias com IA antes do desenho</h2>
+    <p class="stext">Na fase de conceito, usei <strong>IA generativa</strong> (ChatGPT, Gemini, Firefly e Midjourney) para gerar ideias a partir dos atributos da marca e montar o moodboard do logo.</p>
+  </div>
+</div>
+
+<div class="section">
   <div class="slabel">Marca</div>
   <div class="sbody">
     <h2 class="stitle">Uma nova versão para a edição Ouro Preto</h2>
-    <p class="stext">Para a edição Ouro Preto, criei uma nova versão da assinatura do festival, com uma paleta em <strong>bordô, laranja, creme e dourado</strong> e tipografias que equilibram a energia do rock com o lado histórico e sofisticado do evento.</p>
+    <p class="stext">Para a edição Ouro Preto, a nova assinatura partiu de uma exploração com <strong>IA generativa</strong>. Refinei o desenho, a paleta em <strong>bordô, laranja, creme e dourado</strong> e as tipografias, para equilibrar a energia do rock com o lado histórico e sofisticado do evento.</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_marca_antiga.jpg" alt="Marca anterior" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Marca anterior do festival</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_logo.jpg" alt="Nova versão para Ouro Preto" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Nova versão para Ouro Preto</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_marca_antiga.jpg" alt="Marca anterior" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Marca anterior do festival</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_logo.jpg" alt="Nova versão para Ouro Preto" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Nova versão para Ouro Preto</p></div>
     </div>
     <div class="img-contained zoom reveal"><img src="imagens/eventos/bacon_variacoes.jpg" alt="Variações da assinatura sobre a paleta" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Variações da assinatura sobre a paleta</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Variações da assinatura sobre a paleta</p>
     <div class="type-row"><span class="type-chip">Germania One</span><span class="type-chip">Cinzel</span><span class="type-chip">Acumin Variable Concept</span></div>
   </div>
 </div>
@@ -496,10 +522,10 @@ nav{justify-content:flex-start!important}
     <h2 class="stitle">A cidade como elemento de marca</h2>
     <p class="stext">Aqui a minha formação em Arquitetura e Urbanismo entrou no projeto. Os <strong>padrões gráficos foram desenhados a partir dos casarios e igrejas de Ouro Preto</strong>, e ao lado deles uma família de ícones que mistura gastronomia e rock. O resultado é uma linguagem que só faz sentido nesta edição.</p>
     <div class="img-contained zoom reveal"><img src="imagens/eventos/bacon_padroes.jpg" alt="Padrões inspirados na arquitetura de Ouro Preto" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Padrões inspirados na arquitetura de Ouro Preto</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Padrões inspirados na arquitetura de Ouro Preto</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_icones.jpg" alt="Família de ícones" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Família de ícones</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_kv.jpg" alt="KV Onde tem bacon, tem história" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">KV — "Onde tem bacon, tem história"</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_icones.jpg" alt="Família de ícones" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Família de ícones</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_kv.jpg" alt="KV Onde tem bacon, tem história" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">KV — "Onde tem bacon, tem história"</p></div>
     </div>
   </div>
 </div>
@@ -514,14 +540,14 @@ nav{justify-content:flex-start!important}
     <h2 class="stitle">Do cartaz do show ao cardápio</h2>
     <p class="stext">O KV foi desdobrado em cartazes das atrações, cardápio, produtos e redes sociais, mantendo a mesma linguagem em peças com funções bem diferentes.</p>
     <div class="img-contained zoom reveal"><img src="imagens/eventos/bacon_cartazes.jpg" alt="Cartazes das atrações" loading="lazy"></div>
-    <p class="img-cap" style="font-size:.68rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Cartazes das atrações</p>
+    <p class="img-cap" style="font-size:.8125rem;color:var(--text-tertiary);margin:-1rem 0 1.5rem;">Cartazes das atrações</p>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_cardapio.jpg" alt="Cardápio" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Cardápio</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_ecobag.jpg" alt="Ecobag e camiseta" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Ecobag e camiseta</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_cardapio.jpg" alt="Cardápio" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Cardápio</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_ecobag.jpg" alt="Ecobag e camiseta" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Ecobag e camiseta</p></div>
     </div>
     <div class="img-grid-2">
-      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_social1.jpg" alt="Posts de divulgação" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Posts de divulgação</p></div>
-      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_mobile.jpg" alt="Stories e copo" loading="lazy"></div><p style="font-size:.68rem;color:var(--text-tertiary);margin-top:6px;">Stories e copo</p></div>
+      <div class="reveal"><div class="zoom"><img src="imagens/eventos/bacon_social1.jpg" alt="Posts de divulgação" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Posts de divulgação</p></div>
+      <div class="reveal reveal-d1"><div class="zoom"><img src="imagens/eventos/bacon_mobile.jpg" alt="Stories e copo" loading="lazy"></div><p style="font-size:.8125rem;color:var(--text-tertiary);margin-top:6px;">Stories e copo</p></div>
     </div>
   </div>
 </div>
@@ -539,12 +565,11 @@ nav{justify-content:flex-start!important}
   </div>
 </div>
 
+<div class="next-case"><a href="index.html#cases">← Todos os projetos</a><a class="nx" href="case-black.html">Próximo: Black Friday Dotz →</a></div>
+
 <footer>
-  <span class="fn">
-    <img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.5; vertical-align:middle;">
-    <span style="color:var(--text-tertiary); font-size:0.75rem;">· 2026</span>
-  </span>
-  <a class="fl" href="index.html">← Voltar para projetos</a>
+  <span class="fn"><img src="imagens/logo_vetor.svg" alt="Bárbara Pereira" style="height:36px; width:auto; opacity:0.6; vertical-align:middle;"> <span style="color:var(--text-tertiary); font-size:0.8125rem; vertical-align:middle;">Bárbara Pereira · 2026</span></span>
+  <a class="fl" href="index.html#cases">← Voltar para projetos</a>
 </footer>
 
 <script>
